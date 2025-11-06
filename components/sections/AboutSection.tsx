@@ -163,26 +163,19 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600"
+              className="mt-8 bg-white rounded-lg p-6 border border-neutral-200"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <FaAward className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                    {locale === 'mr' ? 'आमचे ध्येय' : locale === 'hi' ? 'हमारा उद्देश्य' : 'Our Mission'}
-                  </h3>
-                  <p className="text-neutral-700 leading-relaxed">
-                    {locale === 'mr' ?
-                      'आता याच अनुभवाच्या जोरावर, युनुस शेख आपल्या सर्वांसाठी एक नवी व्यवसायाची संधी घेऊन आले आहेत. ही संधी म्हणजे केवळ उत्पन्नाचं साधन नाही, तर समाजासाठी काहीतरी करण्याची संधी देखील आहे.' :
-                      locale === 'hi' ?
-                      'अब इसी अनुभव के बल पर, युनुस शेख आप सभी के लिए एक नया व्यवसाय का अवसर लेकर आए हैं। यह अवसर केवल आय का साधन नहीं है, बल्कि समाज के लिए कुछ करने का अवसर भी है।' :
-                      'Now, with this experience, Yunus Sheikh brings a new business opportunity for everyone. This opportunity is not just a means of income, but also a chance to do something for society.'
-                    }
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-base font-semibold text-neutral-900 mb-3">
+                {locale === 'mr' ? 'आमचे ध्येय' : locale === 'hi' ? 'हमारा उद्देश्य' : 'Our Mission'}
+              </h3>
+              <p className="text-neutral-600 leading-relaxed text-sm">
+                {locale === 'mr' ?
+                  'आता याच अनुभवाच्या जोरावर, युनुस शेख आपल्या सर्वांसाठी एक नवी व्यवसायाची संधी घेऊन आले आहेत. ही संधी म्हणजे केवळ उत्पन्नाचं साधन नाही, तर समाजासाठी काहीतरी करण्याची संधी देखील आहे.' :
+                  locale === 'hi' ?
+                  'अब इसी अनुभव के बल पर, युनुस शेख आप सभी के लिए एक नया व्यवसाय का अवसर लेकर आए हैं। यह अवसर केवल आय का साधन नहीं है, बल्कि समाज के लिए कुछ करने का अवसर भी है।' :
+                  'Now, with this experience, Yunus Sheikh brings a new business opportunity for everyone. This opportunity is not just a means of income, but also a chance to do something for society.'
+                }
+              </p>
             </motion.div>
           </motion.div>
 
