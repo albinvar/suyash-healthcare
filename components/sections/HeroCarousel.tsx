@@ -248,20 +248,9 @@ export default function HeroCarousel() {
                     slide.imagePosition === 'right' ? 'md:order-1' : 'md:order-2'
                   }`}
                 >
-                  {/* Logo */}
-                  <motion.div custom={0} variants={contentVariants} className="mb-6">
-                    <Image
-                      src="/logo.png"
-                      alt="Suyash Health Care Centre Logo"
-                      width={120}
-                      height={40}
-                      className="h-10 w-auto"
-                    />
-                  </motion.div>
-
                   {/* Title */}
                   <motion.h1
-                    custom={1}
+                    custom={0}
                     variants={contentVariants}
                     className="text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
                   >
@@ -270,7 +259,7 @@ export default function HeroCarousel() {
 
                   {/* Subtitle */}
                   <motion.p
-                    custom={2}
+                    custom={1}
                     variants={contentVariants}
                     className="text-base lg:text-lg xl:text-xl text-white/90 mb-8 leading-relaxed"
                   >
@@ -280,7 +269,7 @@ export default function HeroCarousel() {
                   {/* Statistics */}
                   {slide.stats && (
                     <motion.div
-                      custom={3}
+                      custom={2}
                       variants={contentVariants}
                       className="grid grid-cols-3 gap-4 mb-8"
                     >
@@ -303,7 +292,7 @@ export default function HeroCarousel() {
 
                   {/* CTA Button */}
                   <motion.button
-                    custom={4}
+                    custom={3}
                     variants={contentVariants}
                     onClick={() => handleScroll(slide.ctaAction)}
                     whileHover={{ scale: 1.05, x: 5 }}
@@ -324,15 +313,16 @@ export default function HeroCarousel() {
                     slide.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'
                   }`}
                 >
-                  <div className="relative h-full w-full flex items-center justify-center">
-                    <div className="relative w-full h-[70%] max-w-lg">
+                  <div className="relative h-full w-full flex items-center justify-center p-4 lg:p-8">
+                    <div className="relative w-full aspect-[4/3] max-w-xl rounded-2xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10">
                       <Image
                         src={slide.image}
                         alt={slide.title[locale]}
                         fill
-                        className="object-contain drop-shadow-2xl"
+                        className="object-cover"
                         priority={currentSlide === 0}
-                        quality={90}
+                        quality={95}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   </div>
@@ -346,38 +336,30 @@ export default function HeroCarousel() {
                   variants={imageVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex-shrink-0 h-48 sm:h-56 relative mb-6"
+                  className="flex-shrink-0 w-full mb-6 px-4"
                 >
-                  <Image
-                    src={slide.image}
-                    alt={slide.title[locale]}
-                    fill
-                    className="object-contain drop-shadow-2xl"
-                    priority={currentSlide === 0}
-                    quality={90}
-                  />
+                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title[locale]}
+                      fill
+                      className="object-cover"
+                      priority={currentSlide === 0}
+                      quality={95}
+                      sizes="100vw"
+                    />
+                  </div>
                 </motion.div>
 
                 {/* Content Below */}
                 <motion.div
                   initial="hidden"
                   animate="visible"
-                  className="flex-1 flex flex-col justify-center"
+                  className="flex-1 flex flex-col justify-center px-4"
                 >
-                  {/* Logo */}
-                  <motion.div custom={0} variants={contentVariants} className="mb-4">
-                    <Image
-                      src="/logo.png"
-                      alt="Suyash Health Care Centre Logo"
-                      width={100}
-                      height={33}
-                      className="h-8 w-auto"
-                    />
-                  </motion.div>
-
                   {/* Title */}
                   <motion.h1
-                    custom={1}
+                    custom={0}
                     variants={contentVariants}
                     className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight"
                   >
@@ -386,7 +368,7 @@ export default function HeroCarousel() {
 
                   {/* Subtitle */}
                   <motion.p
-                    custom={2}
+                    custom={1}
                     variants={contentVariants}
                     className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed"
                   >
@@ -396,7 +378,7 @@ export default function HeroCarousel() {
                   {/* Statistics */}
                   {slide.stats && (
                     <motion.div
-                      custom={3}
+                      custom={2}
                       variants={contentVariants}
                       className="grid grid-cols-3 gap-3 mb-6"
                     >
@@ -418,7 +400,7 @@ export default function HeroCarousel() {
 
                   {/* CTA Button */}
                   <motion.button
-                    custom={4}
+                    custom={3}
                     variants={contentVariants}
                     onClick={() => handleScroll(slide.ctaAction)}
                     whileTap={{ scale: 0.95 }}
