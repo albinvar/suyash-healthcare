@@ -207,7 +207,7 @@ export default function AboutSection() {
 
             {/* Highlights Widget */}
             <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg p-6 text-white">
-              <h3 className="text-lg font-bold mb-4">
+              <h3 className="text-lg font-bold text-white mb-4">
                 {locale === 'mr' ? 'मुख्य वैशिष्ट्ये' : locale === 'hi' ? 'मुख्य विशेषताएं' : 'Key Highlights'}
               </h3>
               <ul className="space-y-3">
