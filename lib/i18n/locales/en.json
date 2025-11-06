@@ -1,0 +1,150 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "ourMachine": "Our Machine",
+    "products": "Products",
+    "services": "Services",
+    "contact": "Contact",
+    "learnMore": "Learn More",
+    "submit": "Submit",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "address": "Address",
+    "readMore": "Read More",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send Message",
+    "allRightsReserved": "All Rights Reserved"
+  },
+
+  "nav": {
+    "logo": "Suyash Health Care Centre",
+    "tagline": "Your Health, Our Responsibility"
+  },
+
+  "hero": {
+    "title": "Suyash Health Care Centre",
+    "subtitle": "Leading in Healthcare Services",
+    "description": "Your healthcare center featuring modern medical equipment and excellent services. We provide high-quality medical equipment and complete technical support.",
+    "ctaPrimary": "Contact Us",
+    "ctaSecondary": "View Our Products"
+  },
+
+  "about": {
+    "heading": "About Us",
+    "title": "Trusted Partner in Healthcare",
+    "description": "Suyash Health Care Centre is a leader in medical equipment and healthcare services. Our mission is to provide the best quality medical equipment and professional services.",
+    "mission": "Our Mission",
+    "missionText": "To provide excellent healthcare services to everyone and improve lives through modern technology.",
+    "vision": "Our Vision",
+    "visionText": "To become India's leading healthcare service provider and make quality equipment available to all.",
+    "features": {
+      "quality": "Premium Quality",
+      "qualityDesc": "ISO certified products and services",
+      "certified": "Certified Products",
+      "certifiedDesc": "Meeting all international standards",
+      "support": "24/7 Support",
+      "supportDesc": "Always available technical assistance",
+      "innovation": "Latest Technology",
+      "innovationDesc": "State-of-the-art medical equipment"
+    }
+  },
+
+  "machine": {
+    "heading": "Our Equipment",
+    "title": "Advanced Medical Equipment",
+    "description": "We offer medical equipment with the latest technology that helps in accurate diagnosis and treatment.",
+    "specifications": "Specifications",
+    "features": "Features",
+    "benefits": "Benefits"
+  },
+
+  "products": {
+    "heading": "Products",
+    "title": "Our Product Range",
+    "description": "Premium quality medical equipment and supplies",
+    "viewAll": "View All",
+    "category": {
+      "all": "All",
+      "medical": "Medical Equipment",
+      "diagnostic": "Diagnostic Equipment",
+      "surgical": "Surgical Equipment"
+    }
+  },
+
+  "services": {
+    "heading": "Services",
+    "title": "Our Services",
+    "description": "Complete healthcare solutions",
+    "list": {
+      "consultation": "Consultation Services",
+      "consultationDesc": "Professional advice and guidance from experts",
+      "maintenance": "Maintenance Services",
+      "maintenanceDesc": "Regular maintenance and repair of equipment",
+      "training": "Training",
+      "trainingDesc": "Complete training for using equipment",
+      "support": "Technical Support",
+      "supportDesc": "24/7 technical assistance and support"
+    }
+  },
+
+  "contact": {
+    "heading": "Contact",
+    "title": "Contact Us",
+    "description": "We are always available for your service",
+    "info": {
+      "address": "Address",
+      "addressText": "Suyash Health Care Centre, Maharashtra, India",
+      "phone": "Phone",
+      "phoneText": "+91 XXXXX XXXXX",
+      "email": "Email",
+      "emailText": "info@suyashhealthcare.com",
+      "hours": "Business Hours",
+      "hoursText": "Monday - Saturday: 9:00 AM - 7:00 PM"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "phonePlaceholder": "Your Phone Number",
+      "messagePlaceholder": "Your Message",
+      "submitButton": "Send Message",
+      "successMessage": "Your message has been sent successfully!",
+      "errorMessage": "Something went wrong. Please try again."
+    }
+  },
+
+  "footer": {
+    "about": {
+      "title": "About Us",
+      "description": "Suyash Health Care Centre is committed to providing excellent medical equipment and services. We believe in quality and innovation in the healthcare sector."
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "address": "Maharashtra, India",
+      "phone": "+91 XXXXX XXXXX",
+      "email": "info@suyashhealthcare.com"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "followUs": "Follow Us"
+    },
+    "businessHours": {
+      "title": "Business Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 7:00 PM",
+      "saturday": "Saturday: 9:00 AM - 5:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "copyright": "© 2024 Suyash Health Care Centre. All Rights Reserved."
+  },
+
+  "whatsapp": {
+    "message": "Hello! I would like more information about your services.",
+    "tooltip": "Send message on WhatsApp"
+  }
+}
