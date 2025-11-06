@@ -9,6 +9,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext';
 interface Slide {
   id: number;
   image: string;
+  imagePosition: 'left' | 'right';
   title: {
     mr: string;
     en: string;
@@ -33,65 +34,69 @@ interface Slide {
     hi: string;
   };
   ctaAction: string;
+  bgGradient: string;
 }
 
 const slides: Slide[] = [
   {
     id: 1,
     image: '/assets/images/gallery/owner.png',
+    imagePosition: 'right',
     title: {
       mr: 'युनुस शेख - आरोग्यसेवेचे प्रणेते',
       en: 'Yunus Sheikh - Pioneer in Healthcare',
       hi: 'युनुस शेख - स्वास्थ्य सेवा के प्रणेता'
     },
     subtitle: {
-      mr: '2002 पासून समाजसेवेत | 20+ वर्षांचा अनुभव',
-      en: 'Serving Society Since 2002 | 20+ Years Experience',
-      hi: '2002 से समाजसेवा में | 20+ वर्षों का अनुभव'
+      mr: '2002 पासून समाजसेवेत | 20+ वर्षांचा अनुभव | सुयश हेल्थ केअर सेंटरचे संस्थापक',
+      en: 'Serving Society Since 2002 | 20+ Years Experience | Founder of Suyash Health Care Centre',
+      hi: '2002 से समाजसेवा में | 20+ वर्षों का अनुभव | सुयश हेल्थ केयर सेंटर के संस्थापक'
     },
     ctaText: {
       mr: 'आमची गोष्ट जाणून घ्या',
       en: 'Know Our Story',
       hi: 'हमारी कहानी जानें'
     },
-    ctaAction: 'about'
+    ctaAction: 'about',
+    bgGradient: 'from-primary-600 via-primary-700 to-primary-800'
   },
   {
     id: 2,
     image: '/assets/images/gallery/anchor.png',
+    imagePosition: 'left',
     title: {
       mr: 'मोफत आरोग्य तपासणी शिबिरे',
       en: 'Free Health Check-up Camps',
       hi: 'मुफ्त स्वास्थ्य जांच शिविर'
     },
     subtitle: {
-      mr: 'ग्रामीण भागातील हजारो नागरिकांपर्यंत आरोग्यसेवा',
+      mr: 'ग्रामीण भागातील हजारो नागरिकांपर्यंत आरोग्यसेवा पोहोचवत आहोत',
       en: 'Bringing Healthcare to Thousands in Rural Areas',
-      hi: 'ग्रामीण क्षेत्रों में हजारों लोगों तक स्वास्थ्य सेवा'
+      hi: 'ग्रामीण क्षेत्रों में हजारों लोगों तक स्वास्थ्य सेवा पहुंचाना'
     },
     stats: [
       {
         value: '10,000+',
         label: {
-          mr: 'लाभार्थी नागरिक',
+          mr: 'लाभार्थी',
           en: 'Beneficiaries',
-          hi: 'लाभार्थी नागरिक'
+          hi: 'लाभार्थी'
         }
       },
       {
         value: '50+',
         label: {
-          mr: 'आरोग्य शिबिरे',
-          en: 'Health Camps',
-          hi: 'स्वास्थ्य शिविर'
+          mr: 'शिबिरे',
+          en: 'Camps',
+          hi: 'शिविर'
         }
       },
       {
         value: '15+',
         label: {
-          mr: 'गावे आणि शहरे',
-          en: 'Villages & Cities',
-          hi: 'गांव और शहर'
+          mr: 'गावे',
+          en: 'Villages',
+          hi: 'गांव'
         }
       }
     ],
@@ -100,85 +105,30 @@ const slides: Slide[] = [
       en: 'Camp Information',
       hi: 'शिविर की जानकारी'
     },
-    ctaAction: 'services'
+    ctaAction: 'services',
+    bgGradient: 'from-secondary-600 via-secondary-700 to-secondary-800'
   },
   {
     id: 3,
     image: '/assets/images/gallery/machine.png',
+    imagePosition: 'right',
     title: {
       mr: 'अत्याधुनिक वैद्यकीय उपकरणे',
       en: 'State-of-the-Art Medical Equipment',
       hi: 'अत्याधुनिक चिकित्सा उपकरण'
     },
     subtitle: {
-      mr: 'ISO प्रमाणित उत्पादने | संपूर्ण तांत्रिक सहाय्य | देशभरात सेवा',
-      en: 'ISO Certified Products | Complete Technical Support | Nationwide Service',
-      hi: 'ISO प्रमाणित उत्पाद | संपूर्ण तकनीकी सहायता | राष्ट्रव्यापी सेवा'
+      mr: 'ISO प्रमाणित उत्पादने | संपूर्ण तांत्रिक सहाय्य | 24/7 देखभाल सेवा | देशभरात उपलब्ध',
+      en: 'ISO Certified Products | Complete Technical Support | 24/7 Maintenance | Available Nationwide',
+      hi: 'ISO प्रमाणित उत्पाद | संपूर्ण तकनीकी सहायता | 24/7 रखरखाव | देशभर उपलब्ध'
     },
     ctaText: {
       mr: 'उपकरणे पहा',
       en: 'View Equipment',
       hi: 'उपकरण देखें'
     },
-    ctaAction: 'machine'
-  },
-  {
-    id: 4,
-    image: '/assets/images/gallery/owner.png',
-    title: {
-      mr: 'समाजसेवा - आमचा ध्येय',
-      en: 'Social Service - Our Mission',
-      hi: 'समाजसेवा - हमारा लक्ष्य'
-    },
-    subtitle: {
-      mr: 'गरीब आणि गरजू रुग्णांना निःशुल्क उपचार | समाजातील प्रत्येकाला आरोग्यसेवेचा अधिकार',
-      en: 'Free Treatment for Needy Patients | Healthcare is Everyone\'s Right',
-      hi: 'जरूरतमंद मरीजों के लिए मुफ्त इलाज | स्वास्थ्य सेवा सभी का अधिकार'
-    },
-    stats: [
-      {
-        value: '5,000+',
-        label: {
-          mr: 'निःशुल्क उपचार',
-          en: 'Free Treatments',
-          hi: 'मुफ्त उपचार'
-        }
-      },
-      {
-        value: '100%',
-        label: {
-          mr: 'समाजसेवा',
-          en: 'Social Service',
-          hi: 'समाजसेवा'
-        }
-      }
-    ],
-    ctaText: {
-      mr: 'सामील व्हा',
-      en: 'Join Us',
-      hi: 'हमसे जुड़ें'
-    },
-    ctaAction: 'contact'
-  },
-  {
-    id: 5,
-    image: '/assets/images/gallery/machine.png',
-    title: {
-      mr: '24/7 तांत्रिक सहाय्य सेवा',
-      en: '24/7 Technical Support Service',
-      hi: '24/7 तकनीकी सहायता सेवा'
-    },
-    subtitle: {
-      mr: 'नेहमी उपलब्ध | द्रुत प्रतिसाद | तज्ञ तंत्रज्ञ',
-      en: 'Always Available | Quick Response | Expert Technicians',
-      hi: 'हमेशा उपलब्ध | त्वरित प्रतिक्रिया | विशेषज्ञ तकनीशियन'
-    },
-    ctaText: {
-      mr: 'आता संपर्क साधा',
-      en: 'Contact Now',
-      hi: 'अभी संपर्क करें'
-    },
-    ctaAction: 'contact'
+    ctaAction: 'machine',
+    bgGradient: 'from-primary-600 via-secondary-600 to-accent-600'
   }
 ];
 
@@ -226,40 +176,49 @@ export default function HeroCarousel() {
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.9
+      opacity: 0
     }),
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1,
-      scale: 1
+      opacity: 1
     },
     exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.9
+      opacity: 0
     })
   };
 
-  const textVariants = {
+  const contentVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: custom * 0.2,
+        delay: custom * 0.15,
         duration: 0.6,
-        ease: 'easeOut'
+        ease: [0.22, 1, 0.36, 1]
       }
     })
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
   };
 
   return (
     <section
       id="home"
-      className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[90vh] overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-primary-900"
+      className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[90vh] overflow-hidden bg-neutral-900"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -273,98 +232,203 @@ export default function HeroCarousel() {
           exit="exit"
           transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 },
-            scale: { duration: 0.5 }
+            opacity: { duration: 0.5 }
           }}
           className="absolute inset-0"
         >
-          {/* Background Image with Parallax Effect */}
-          <motion.div
-            className="absolute inset-0"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 8, ease: 'linear' }}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title[locale]}
-              fill
-              className="object-cover"
-              priority={currentSlide === 0}
-              quality={90}
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-          </motion.div>
-
-          {/* Content */}
-          <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-            <div className="w-full lg:w-2/3">
-              {/* Title */}
-              <motion.h1
-                custom={0}
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
-              >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-primary-200 to-white">
-                  {slide.title[locale]}
-                </span>
-              </motion.h1>
-
-              {/* Subtitle */}
-              <motion.p
-                custom={1}
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-200 mb-6 sm:mb-8 leading-relaxed max-w-3xl"
-              >
-                {slide.subtitle[locale]}
-              </motion.p>
-
-              {/* Statistics */}
-              {slide.stats && (
+          <div className={`h-full w-full bg-gradient-to-br ${slide.bgGradient}`}>
+            <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Desktop & Tablet Layout */}
+              <div className="hidden md:grid md:grid-cols-2 h-full items-center gap-8 lg:gap-12">
+                {/* Content Side */}
                 <motion.div
-                  custom={2}
-                  variants={textVariants}
                   initial="hidden"
                   animate="visible"
-                  className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8"
+                  className={`flex flex-col justify-center ${
+                    slide.imagePosition === 'right' ? 'md:order-1' : 'md:order-2'
+                  }`}
                 >
-                  {slide.stats.map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.05 }}
-                      className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
-                    >
-                      <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-xs sm:text-sm text-neutral-300">
-                        {stat.label[locale]}
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                  {/* Logo */}
+                  <motion.div custom={0} variants={contentVariants} className="mb-6">
+                    <Image
+                      src="/logo.png"
+                      alt="Suyash Health Care Centre Logo"
+                      width={120}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
+                  </motion.div>
 
-              {/* CTA Button */}
-              <motion.button
-                custom={3}
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                onClick={() => handleScroll(slide.ctaAction)}
-                whileHover={{ scale: 1.05, x: 5 }}
-                whileTap={{ scale: 0.95 }}
-                className="group inline-flex items-center space-x-3 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-2xl transition-all duration-300"
-              >
-                <span>{slide.ctaText[locale]}</span>
-                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+                  {/* Title */}
+                  <motion.h1
+                    custom={1}
+                    variants={contentVariants}
+                    className="text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
+                  >
+                    {slide.title[locale]}
+                  </motion.h1>
+
+                  {/* Subtitle */}
+                  <motion.p
+                    custom={2}
+                    variants={contentVariants}
+                    className="text-base lg:text-lg xl:text-xl text-white/90 mb-8 leading-relaxed"
+                  >
+                    {slide.subtitle[locale]}
+                  </motion.p>
+
+                  {/* Statistics */}
+                  {slide.stats && (
+                    <motion.div
+                      custom={3}
+                      variants={contentVariants}
+                      className="grid grid-cols-3 gap-4 mb-8"
+                    >
+                      {slide.stats.map((stat, index) => (
+                        <motion.div
+                          key={index}
+                          whileHover={{ scale: 1.05, y: -5 }}
+                          className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                        >
+                          <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs lg:text-sm text-white/80">
+                            {stat.label[locale]}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+
+                  {/* CTA Button */}
+                  <motion.button
+                    custom={4}
+                    variants={contentVariants}
+                    onClick={() => handleScroll(slide.ctaAction)}
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group inline-flex items-center space-x-3 bg-white hover:bg-neutral-50 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold shadow-2xl transition-all duration-300 w-fit"
+                  >
+                    <span>{slide.ctaText[locale]}</span>
+                    <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                </motion.div>
+
+                {/* Image Side */}
+                <motion.div
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className={`relative h-full ${
+                    slide.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'
+                  }`}
+                >
+                  <div className="relative h-full w-full flex items-center justify-center">
+                    <div className="relative w-full h-[70%] max-w-lg">
+                      <Image
+                        src={slide.image}
+                        alt={slide.title[locale]}
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                        priority={currentSlide === 0}
+                        quality={90}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Mobile Layout - Stacked */}
+              <div className="md:hidden flex flex-col h-full py-8">
+                {/* Image on Top */}
+                <motion.div
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex-shrink-0 h-48 sm:h-56 relative mb-6"
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.title[locale]}
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                    priority={currentSlide === 0}
+                    quality={90}
+                  />
+                </motion.div>
+
+                {/* Content Below */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  className="flex-1 flex flex-col justify-center"
+                >
+                  {/* Logo */}
+                  <motion.div custom={0} variants={contentVariants} className="mb-4">
+                    <Image
+                      src="/logo.png"
+                      alt="Suyash Health Care Centre Logo"
+                      width={100}
+                      height={33}
+                      className="h-8 w-auto"
+                    />
+                  </motion.div>
+
+                  {/* Title */}
+                  <motion.h1
+                    custom={1}
+                    variants={contentVariants}
+                    className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight"
+                  >
+                    {slide.title[locale]}
+                  </motion.h1>
+
+                  {/* Subtitle */}
+                  <motion.p
+                    custom={2}
+                    variants={contentVariants}
+                    className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed"
+                  >
+                    {slide.subtitle[locale]}
+                  </motion.p>
+
+                  {/* Statistics */}
+                  {slide.stats && (
+                    <motion.div
+                      custom={3}
+                      variants={contentVariants}
+                      className="grid grid-cols-3 gap-3 mb-6"
+                    >
+                      {slide.stats.map((stat, index) => (
+                        <div
+                          key={index}
+                          className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20"
+                        >
+                          <div className="text-xl font-bold text-white mb-1">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-white/80">
+                            {stat.label[locale]}
+                          </div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+
+                  {/* CTA Button */}
+                  <motion.button
+                    custom={4}
+                    variants={contentVariants}
+                    onClick={() => handleScroll(slide.ctaAction)}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-primary-700 px-6 py-3 rounded-full text-base font-semibold shadow-2xl w-full sm:w-auto"
+                  >
+                    <span>{slide.ctaText[locale]}</span>
+                    <FiArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -376,7 +440,7 @@ export default function HeroCarousel() {
           whileHover={{ scale: 1.1, x: -5 }}
           whileTap={{ scale: 0.9 }}
           onClick={prevSlide}
-          className="pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg transition-all duration-300 border border-white/20"
+          className="pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-3 lg:p-4 rounded-full shadow-lg transition-all duration-300 border border-white/20"
           aria-label="Previous slide"
         >
           <FiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -386,7 +450,7 @@ export default function HeroCarousel() {
           whileHover={{ scale: 1.1, x: 5 }}
           whileTap={{ scale: 0.9 }}
           onClick={nextSlide}
-          className="pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg transition-all duration-300 border border-white/20"
+          className="pointer-events-auto bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-3 lg:p-4 rounded-full shadow-lg transition-all duration-300 border border-white/20"
           aria-label="Next slide"
         >
           <FiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -394,7 +458,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-0 right-0 flex justify-center space-x-2 sm:space-x-3">
+      <div className="absolute bottom-6 lg:bottom-8 left-0 right-0 flex justify-center space-x-3 z-10">
         {slides.map((_, index) => (
           <motion.button
             key={index}
@@ -403,8 +467,8 @@ export default function HeroCarousel() {
             whileTap={{ scale: 0.9 }}
             className={`transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 sm:w-12 h-2 sm:h-2.5 bg-white'
-                : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/40 hover:bg-white/60'
+                ? 'w-12 h-2.5 bg-white'
+                : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
             } rounded-full`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -416,7 +480,7 @@ export default function HeroCarousel() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-white/20"
+          className="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-sm font-medium border border-white/20 z-10"
         >
           Paused
         </motion.div>
