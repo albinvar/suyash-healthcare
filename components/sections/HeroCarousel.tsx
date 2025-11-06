@@ -107,28 +107,6 @@ const slides: Slide[] = [
     },
     ctaAction: 'services',
     bgGradient: 'from-secondary-600 via-secondary-700 to-secondary-800'
-  },
-  {
-    id: 3,
-    image: '/assets/images/gallery/machine.png',
-    imagePosition: 'right',
-    title: {
-      mr: 'अत्याधुनिक वैद्यकीय उपकरणे',
-      en: 'State-of-the-Art Medical Equipment',
-      hi: 'अत्याधुनिक चिकित्सा उपकरण'
-    },
-    subtitle: {
-      mr: 'ISO प्रमाणित उत्पादने | संपूर्ण तांत्रिक सहाय्य | 24/7 देखभाल सेवा | देशभरात उपलब्ध',
-      en: 'ISO Certified Products | Complete Technical Support | 24/7 Maintenance | Available Nationwide',
-      hi: 'ISO प्रमाणित उत्पाद | संपूर्ण तकनीकी सहायता | 24/7 रखरखाव | देशभर उपलब्ध'
-    },
-    ctaText: {
-      mr: 'उपकरणे पहा',
-      en: 'View Equipment',
-      hi: 'उपकरण देखें'
-    },
-    ctaAction: 'machine',
-    bgGradient: 'from-primary-600 via-secondary-600 to-accent-600'
   }
 ];
 
