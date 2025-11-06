@@ -332,7 +332,7 @@ export default function HeroCarousel() {
               </div>
 
               {/* Mobile Layout - Content top, Image bottom aligned */}
-              <div className="md:hidden relative h-full py-8 flex flex-col">
+              <div className="md:hidden relative h-full pt-20 pb-8 flex flex-col">
                 {/* Content at Top */}
                 <motion.div
                   initial="hidden"
