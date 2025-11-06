@@ -1,9 +1,9 @@
-import Hero from '@/components/sections/Hero';
+import HeroCarousel from '@/components/sections/HeroCarousel';
 
 export default function Home() {
   return (
     <div>
-      <Hero />
+      <HeroCarousel />
 
       {/* About Section - Placeholder */}
       <section id="about" className="section-padding bg-white">
