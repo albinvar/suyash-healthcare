@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaCalendar, FaUsers, FaHandHoldingHeart, FaAward } from 'react-icons/fa';
+import { FaCalendar, FaUsers, FaHandHoldingHeart, FaAward, FaCheckCircle } from 'react-icons/fa';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface StatCardProps {
@@ -200,57 +200,43 @@ export default function AboutSection() {
 
             {/* Highlights Widget */}
             <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg p-6 text-white">
-              <h3 className="text-lg font-bold text-white mb-4">
+              <h3 className="text-lg font-bold text-white mb-5">
                 {locale === 'mr' ? 'मुख्य वैशिष्ट्ये' : locale === 'hi' ? 'मुख्य विशेषताएं' : 'Key Highlights'}
               </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-200 mt-1">✓</span>
-                  <span className="text-sm">
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className="text-sm leading-relaxed">
                     {locale === 'mr' ? 'आयुर्वेदिक सुवर्णप्राशन कार्यक्रम' :
                      locale === 'hi' ? 'आयुर्वेदिक सुवर्णप्राशन कार्यक्रम' :
                      'Ayurvedic Suvarnaprashan Program'}
                   </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-200 mt-1">✓</span>
-                  <span className="text-sm">
+                <li className="flex items-center gap-3">
+                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className="text-sm leading-relaxed">
                     {locale === 'mr' ? 'ग्रामीण भागात मोफत आरोग्य सेवा' :
                      locale === 'hi' ? 'ग्रामीण क्षेत्रों में मुफ्त स्वास्थ्य सेवा' :
                      'Free Healthcare in Rural Areas'}
                   </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-200 mt-1">✓</span>
-                  <span className="text-sm">
+                <li className="flex items-center gap-3">
+                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className="text-sm leading-relaxed">
                     {locale === 'mr' ? 'नियमित आरोग्य शिबिरे' :
                      locale === 'hi' ? 'नियमित स्वास्थ्य शिविर' :
                      'Regular Health Camps'}
                   </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-200 mt-1">✓</span>
-                  <span className="text-sm">
+                <li className="flex items-center gap-3">
+                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className="text-sm leading-relaxed">
                     {locale === 'mr' ? '20+ वर्षांचा समाजसेवेचा अनुभव' :
                      locale === 'hi' ? '20+ वर्षों का सामाजिक सेवा अनुभव' :
                      '20+ Years of Social Service'}
                   </span>
                 </li>
               </ul>
-            </div>
-
-            {/* Contact Widget */}
-            <div className="bg-secondary-50 rounded-lg p-6 border border-secondary-100">
-              <h3 className="text-lg font-bold text-neutral-900 mb-3">
-                {locale === 'mr' ? 'संपर्क माहिती' : locale === 'hi' ? 'संपर्क जानकारी' : 'Contact Information'}
-              </h3>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                {locale === 'mr' ?
-                  'अधिक माहिती किंवा आरोग्य शिबिरांसाठी आमच्याशी संपर्क साधा.' :
-                  locale === 'hi' ?
-                  'अधिक जानकारी या स्वास्थ्य शिविरों के लिए हमसे संपर्क करें।' :
-                  'Get in touch with us for more information or health camps.'}
-              </p>
             </div>
           </motion.div>
         </div>
