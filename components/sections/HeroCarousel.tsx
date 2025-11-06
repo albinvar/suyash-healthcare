@@ -400,7 +400,7 @@ export default function HeroCarousel() {
                     slide.imagePosition === 'right' ? 'right-0' : 'left-0'
                   } w-[85%] max-w-md z-0`}
                 >
-                  <div className="relative w-full aspect-[4/3] overflow-hidden shadow-2xl">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden">
                     <Image
                       src={slide.image}
                       alt={slide.title[locale]}
