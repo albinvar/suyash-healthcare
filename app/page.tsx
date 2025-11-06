@@ -1,21 +1,13 @@
 import HeroCarousel from '@/components/sections/HeroCarousel';
+import AboutSection from '@/components/sections/AboutSection';
 
 export default function Home() {
   return (
     <div>
       <HeroCarousel />
 
-      {/* About Section - Placeholder */}
-      <section id="about" className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="heading-secondary mb-4">आमच्याबद्दल</h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              येथे आपल्या संस्थेबद्दलची माहिती येईल...
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* About Section */}
+      <AboutSection />
 
       {/* Machine Section - Placeholder */}
       <section id="machine" className="section-padding bg-neutral-50">
