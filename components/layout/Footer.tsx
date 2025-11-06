@@ -1,15 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { FaHeartbeat, FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
-import { getTranslations, defaultLocale, type Locale } from '@/lib/i18n';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
-  const [currentLocale] = useState<Locale>(defaultLocale);
-  const t = getTranslations(currentLocale);
+  const { t } = useLanguage();
 
   const quickLinks = [
     { href: '#home', label: t.common.home },

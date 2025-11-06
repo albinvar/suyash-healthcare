@@ -3,14 +3,13 @@
 import { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getTranslations, defaultLocale, type Locale } from '@/lib/i18n';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
-  const [currentLocale] = useState<Locale>(defaultLocale);
 
-  const t = getTranslations(currentLocale);
+  const { t } = useLanguage();
 
   // Show button after scrolling down a bit
   useEffect(() => {

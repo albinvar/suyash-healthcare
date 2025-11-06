@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 export const metadata: Metadata = {
   title: "सुयश हेल्थ केअर सेंटर | Suyash Health Care Centre",
@@ -26,12 +27,14 @@ export default function RootLayout({
   return (
     <html lang="mr" className="scroll-smooth">
       <body className="antialiased">
-        <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <LanguageProvider>
+          <Navigation />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </LanguageProvider>
       </body>
     </html>
   );

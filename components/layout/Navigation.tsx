@@ -5,16 +5,16 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaHeartbeat } from 'react-icons/fa';
-import { getTranslations, defaultLocale, localeMetadata, type Locale } from '@/lib/i18n';
+import { localeMetadata, type Locale } from '@/lib/i18n';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { cn } from '@/lib/utils';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale);
 
-  const t = getTranslations(currentLocale);
+  const { locale, setLocale, t } = useLanguage();
 
   const navLinks = [
     { href: '#home', label: t.common.home },
@@ -59,10 +59,9 @@ export default function Navigation() {
     }
   };
 
-  const handleLanguageChange = (locale: Locale) => {
-    setCurrentLocale(locale);
+  const handleLanguageChange = (newLocale: Locale) => {
+    setLocale(newLocale);
     setIsLangMenuOpen(false);
-    // In the future, this will update the context
   };
 
   return (
@@ -117,7 +116,7 @@ export default function Navigation() {
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                 className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200"
               >
-                <span>{localeMetadata[currentLocale].name}</span>
+                <span>{localeMetadata[locale].name}</span>
                 <FiChevronDown
                   className={cn(
                     'w-4 h-4 transition-transform duration-200',
@@ -134,17 +133,17 @@ export default function Navigation() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-neutral-200 overflow-hidden"
                   >
-                    {(['mr', 'en', 'hi'] as Locale[]).map((locale) => (
+                    {(['mr', 'en', 'hi'] as Locale[]).map((localeOption) => (
                       <button
-                        key={locale}
-                        onClick={() => handleLanguageChange(locale)}
+                        key={localeOption}
+                        onClick={() => handleLanguageChange(localeOption)}
                         className={cn(
                           'w-full px-4 py-2 text-left text-sm hover:bg-primary-50 transition-colors',
-                          currentLocale === locale && 'bg-primary-100 text-primary-700 font-medium'
+                          locale === localeOption && 'bg-primary-100 text-primary-700 font-medium'
                         )}
                       >
-                        <span className="mr-2">{localeMetadata[locale].flag}</span>
-                        {localeMetadata[locale].name}
+                        <span className="mr-2">{localeMetadata[localeOption].flag}</span>
+                        {localeMetadata[localeOption].name}
                       </button>
                     ))}
                   </motion.div>

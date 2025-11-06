@@ -1,13 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaHeartbeat, FaShieldAlt, FaUserMd, FaAward } from 'react-icons/fa';
-import { getTranslations, defaultLocale, type Locale } from '@/lib/i18n';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Hero() {
-  const [currentLocale] = useState<Locale>(defaultLocale);
-  const t = getTranslations(currentLocale);
+  const { t } = useLanguage();
 
   const features = [
     {
