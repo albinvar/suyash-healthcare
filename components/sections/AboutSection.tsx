@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
@@ -106,69 +105,48 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16" ref={ref}>
-          {/* Left Side - Image */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative order-2 lg:order-1"
-          >
-            <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-              <Image
-                src="/assets/images/gallery/owner.png"
-                alt="Yunus Sheikh - Founder"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={95}
-              />
-            </div>
-          </motion.div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Content */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          {/* Section Label */}
+          <div className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide text-center">
+            {locale === 'mr' ? 'आमच्याबद्दल' : locale === 'hi' ? 'हमारे बारे में' : 'About Us'}
+          </div>
 
-          {/* Right Side - Content */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 lg:order-2"
-          >
-            {/* Section Label */}
-            <div className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">
-              {locale === 'mr' ? 'आमच्याबद्दल' : locale === 'hi' ? 'हमारे बारे में' : 'About Us'}
-            </div>
+          {/* Headline */}
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 text-center">
+            {locale === 'mr' ? 'युनुस शेख - एक प्रेरणादायी प्रवास' :
+             locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
+             'Yunus Sheikh - An Inspiring Journey'}
+          </h2>
 
-            {/* Headline */}
-            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-              {locale === 'mr' ? 'युनुस शेख - एक प्रेरणादायी प्रवास' :
-               locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
-               'Yunus Sheikh - An Inspiring Journey'}
-            </h2>
+          {/* Main Content */}
+          <div className="space-y-4 text-neutral-700 leading-relaxed text-center">
+            <p>
+              {locale === 'mr' ?
+                'युनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
+                locale === 'hi' ?
+                'युनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
+                'Yunus Sheikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
+              }
+            </p>
 
-            {/* Main Content */}
-            <div className="space-y-4 text-neutral-700 leading-relaxed">
-              <p>
-                {locale === 'mr' ?
-                  'युनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
-                  locale === 'hi' ?
-                  'युनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
-                  'Yunus Sheikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
-                }
-              </p>
-
-              <p>
-                {locale === 'mr' ?
-                  'पुणे येथे येऊन त्यांनी पुणे ग्रामीण भागात अनेक आरोग्य शिबिरे यशस्वीपणे आयोजित केली असून, त्यांचे हे समाजोपयोगी कार्य आजही अखंडपणे सुरू आहे.' :
-                  locale === 'hi' ?
-                  'पुणे आकर उन्होंने पुणे ग्रामीण क्षेत्र में कई स्वास्थ्य शिविर सफलतापूर्वक आयोजित किए हैं, और उनका यह सामाजिक कार्य आज भी निरंतर जारी है।' :
-                  'After coming to Pune, he has successfully organized numerous health camps in rural Pune, and this social welfare work continues uninterrupted to this day.'
-                }
-              </p>
-            </div>
-          </motion.div>
-        </div>
+            <p>
+              {locale === 'mr' ?
+                'पुणे येथे येऊन त्यांनी पुणे ग्रामीण भागात अनेक आरोग्य शिबिरे यशस्वीपणे आयोजित केली असून, त्यांचे हे समाजोपयोगी कार्य आजही अखंडपणे सुरू आहे.' :
+                locale === 'hi' ?
+                'पुणे आकर उन्होंने पुणे ग्रामीण क्षेत्र में कई स्वास्थ्य शिविर सफलतापूर्वक आयोजित किए हैं, और उनका यह सामाजिक कार्य आज भी निरंतर जारी है।' :
+                'After coming to Pune, he has successfully organized numerous health camps in rural Pune, and this social welfare work continues uninterrupted to this day.'
+              }
+            </p>
+          </div>
+        </motion.div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
