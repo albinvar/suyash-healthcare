@@ -313,8 +313,10 @@ export default function HeroCarousel() {
                     slide.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'
                   }`}
                 >
-                  <div className="relative h-full w-full flex items-center justify-center p-4 lg:p-8">
-                    <div className="relative w-full aspect-[4/3] max-w-xl overflow-hidden">
+                  <div className={`relative h-full w-full flex items-end p-4 lg:p-8 ${
+                    slide.imagePosition === 'right' ? 'justify-end' : 'justify-start'
+                  }`}>
+                    <div className="relative w-full aspect-[4/3] max-w-lg overflow-hidden">
                       <Image
                         src={slide.image}
                         alt={slide.title[locale]}
