@@ -396,11 +396,11 @@ export default function HeroCarousel() {
                   variants={imageVariants}
                   initial="hidden"
                   animate="visible"
-                  className={`absolute bottom-8 ${
-                    slide.imagePosition === 'right' ? 'right-4' : 'left-4'
-                  } w-[65%] max-w-xs z-0`}
+                  className={`absolute bottom-0 ${
+                    slide.imagePosition === 'right' ? 'right-0' : 'left-0'
+                  } w-[85%] max-w-md z-0`}
                 >
-                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden shadow-2xl">
                     <Image
                       src={slide.image}
                       alt={slide.title[locale]}
@@ -408,7 +408,7 @@ export default function HeroCarousel() {
                       className="object-cover"
                       priority={currentSlide === 0}
                       quality={95}
-                      sizes="65vw"
+                      sizes="85vw"
                     />
                   </div>
                 </motion.div>
