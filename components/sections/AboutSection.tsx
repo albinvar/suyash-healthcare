@@ -163,17 +163,17 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8 bg-white rounded-lg p-6 border border-primary-100"
+              className="mt-8 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600"
             >
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FaAward className="w-5 h-5 text-primary-600" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <FaAward className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3">
                     {locale === 'mr' ? 'आमचे ध्येय' : locale === 'hi' ? 'हमारा उद्देश्य' : 'Our Mission'}
                   </h3>
-                  <p className="text-neutral-700 text-sm leading-relaxed">
+                  <p className="text-neutral-700 leading-relaxed">
                     {locale === 'mr' ?
                       'आता याच अनुभवाच्या जोरावर, युनुस शेख आपल्या सर्वांसाठी एक नवी व्यवसायाची संधी घेऊन आले आहेत. ही संधी म्हणजे केवळ उत्पन्नाचं साधन नाही, तर समाजासाठी काहीतरी करण्याची संधी देखील आहे.' :
                       locale === 'hi' ?
