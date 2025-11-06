@@ -313,10 +313,10 @@ export default function HeroCarousel() {
                     slide.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'
                   }`}
                 >
-                  <div className={`relative h-full w-full flex items-end p-4 lg:p-8 ${
+                  <div className={`relative h-full w-full flex items-end ${
                     slide.imagePosition === 'right' ? 'justify-end' : 'justify-start'
                   }`}>
-                    <div className="relative w-full aspect-[4/3] max-w-lg overflow-hidden">
+                    <div className="relative w-[85%] aspect-[4/3] overflow-hidden">
                       <Image
                         src={slide.image}
                         alt={slide.title[locale]}
@@ -324,7 +324,7 @@ export default function HeroCarousel() {
                         className="object-cover"
                         priority={currentSlide === 0}
                         quality={95}
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, 42.5vw"
                       />
                     </div>
                   </div>
