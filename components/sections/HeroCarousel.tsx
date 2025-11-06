@@ -314,7 +314,7 @@ export default function HeroCarousel() {
                   }`}
                 >
                   <div className="relative h-full w-full flex items-center justify-center p-4 lg:p-8">
-                    <div className="relative w-full aspect-[4/3] max-w-xl rounded-2xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <div className="relative w-full aspect-[4/3] max-w-xl overflow-hidden">
                       <Image
                         src={slide.image}
                         alt={slide.title[locale]}
