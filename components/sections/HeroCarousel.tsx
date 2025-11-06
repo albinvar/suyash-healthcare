@@ -329,33 +329,13 @@ export default function HeroCarousel() {
                 </motion.div>
               </div>
 
-              {/* Mobile Layout - Stacked */}
-              <div className="md:hidden flex flex-col h-full py-8">
-                {/* Image on Top */}
-                <motion.div
-                  variants={imageVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex-shrink-0 w-full mb-6 px-4"
-                >
-                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title[locale]}
-                      fill
-                      className="object-cover"
-                      priority={currentSlide === 0}
-                      quality={95}
-                      sizes="100vw"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Content Below */}
+              {/* Mobile Layout - Content top, Image bottom aligned */}
+              <div className="md:hidden relative h-full py-8 flex flex-col">
+                {/* Content at Top */}
                 <motion.div
                   initial="hidden"
                   animate="visible"
-                  className="flex-1 flex flex-col justify-center px-4"
+                  className="flex-1 flex flex-col justify-start px-4 pb-4 z-10"
                 >
                   {/* Title */}
                   <motion.h1
@@ -370,7 +350,7 @@ export default function HeroCarousel() {
                   <motion.p
                     custom={1}
                     variants={contentVariants}
-                    className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed"
+                    className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed max-w-md"
                   >
                     {slide.subtitle[locale]}
                   </motion.p>
@@ -380,7 +360,7 @@ export default function HeroCarousel() {
                     <motion.div
                       custom={2}
                       variants={contentVariants}
-                      className="grid grid-cols-3 gap-3 mb-6"
+                      className="grid grid-cols-3 gap-3 mb-6 max-w-md"
                     >
                       {slide.stats.map((stat, index) => (
                         <div
@@ -404,11 +384,33 @@ export default function HeroCarousel() {
                     variants={contentVariants}
                     onClick={() => handleScroll(slide.ctaAction)}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center justify-center space-x-2 bg-white text-primary-700 px-6 py-3 rounded-full text-base font-semibold shadow-2xl w-full sm:w-auto"
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-primary-700 px-6 py-3 rounded-full text-base font-semibold shadow-2xl w-full sm:w-auto max-w-xs"
                   >
                     <span>{slide.ctaText[locale]}</span>
                     <FiArrowRight className="w-4 h-4" />
                   </motion.button>
+                </motion.div>
+
+                {/* Image at Bottom - Aligned based on imagePosition */}
+                <motion.div
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className={`absolute bottom-8 ${
+                    slide.imagePosition === 'right' ? 'right-4' : 'left-4'
+                  } w-[65%] max-w-xs z-0`}
+                >
+                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title[locale]}
+                      fill
+                      className="object-cover"
+                      priority={currentSlide === 0}
+                      quality={95}
+                      sizes="65vw"
+                    />
+                  </div>
                 </motion.div>
               </div>
             </div>
