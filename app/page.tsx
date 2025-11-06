@@ -1,5 +1,6 @@
 import HeroCarousel from '@/components/sections/HeroCarousel';
 import AboutSection from '@/components/sections/AboutSection';
+import MachineShowcase from '@/components/sections/MachineShowcase';
 
 export default function Home() {
   return (
@@ -9,17 +10,8 @@ export default function Home() {
       {/* About Section */}
       <AboutSection />
 
-      {/* Machine Section - Placeholder */}
-      <section id="machine" className="section-padding bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="heading-secondary mb-4">आमचे यंत्र</h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              आमच्या अत्याधुनिक वैद्यकीय उपकरणांबद्दल माहिती येथे येईल...
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Machine Showcase Section */}
+      <MachineShowcase />
 
       {/* Products Section - Placeholder */}
       <section id="products" className="section-padding bg-white">
