@@ -35,6 +35,7 @@ export function t(
   key: string
 ): string {
   const keys = key.split('.');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let value: any = translations;
 
   for (const k of keys) {

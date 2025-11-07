@@ -176,7 +176,7 @@ export default function HeroCarousel() {
       transition: {
         delay: custom * 0.15,
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     })
   };
@@ -188,7 +188,7 @@ export default function HeroCarousel() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     }
   };

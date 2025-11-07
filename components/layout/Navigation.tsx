@@ -5,7 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
-import { localeMetadata, type Locale } from '@/lib/i18n';
+import { localeMetadata } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n/types';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { cn } from '@/lib/utils';
 

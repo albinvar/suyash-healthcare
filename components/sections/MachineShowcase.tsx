@@ -11,7 +11,6 @@ import {
   FaChartBar,
   FaUserMd,
   FaPlay,
-  FaCertificate,
   FaChevronDown,
   FaChevronUp
 } from 'react-icons/fa';
