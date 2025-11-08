@@ -19,79 +19,95 @@ export default function MachineShowcase() {
   ];
 
   return (
-    <section id="machine" className="py-16 lg:py-24 bg-neutral-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Image */}
+    <section id="machine" className="py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12" ref={ref}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4"
+          >
+            {locale === 'mr' ? 'डिजिटल हेल्थ मशीन' :
+             locale === 'hi' ? 'डिजिटल हेल्थ मशीन' :
+             'Digital Health Machine'}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-base text-neutral-600 max-w-2xl mx-auto"
+          >
+            {locale === 'mr' ? '90 सेकंदात संपूर्ण आरोग्य रिपोर्ट - NABL मान्यताप्राप्त तंत्रज्ञान' :
+             locale === 'hi' ? '90 सेकंड में पूर्ण स्वास्थ्य रिपोर्ट - NABL मान्यता प्राप्त तकनीक' :
+             'Complete Health Report in 90 Seconds - NABL Approved Technology'}
+          </motion.p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-square bg-neutral-50 rounded-lg overflow-hidden border border-neutral-200">
               <Image
                 src="/assets/images/gallery/machine.png"
-                alt="Health Machine"
+                alt="Digital Health Machine"
                 fill
                 className="object-contain p-8"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
-              <div className="absolute top-6 right-6 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md">
+              <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1.5 rounded-md text-xs font-bold">
                 NABL
               </div>
             </div>
           </motion.div>
 
-          {/* Right: Content */}
+          {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-              {locale === 'mr' ? '90 सेकंदात संपूर्ण आरोग्य रिपोर्ट' :
-               locale === 'hi' ? '90 सेकंड में पूर्ण स्वास्थ्य रिपोर्ट' :
-               '90-Second Complete Health Report'}
-            </h2>
-
-            <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-              {locale === 'mr' ? 'अत्याधुनिक तंत्रज्ञान वापरून 50+ पॅरामीटर्सची तपासणी. NABL मान्यताप्राप्त, डिजिटल रिपोर्ट SMS आणि प्रिंट मध्ये.' :
-               locale === 'hi' ? 'अत्याधुनिक तकनीक से 50+ पैरामीटर की जांच। NABL मान्यता प्राप्त, डिजिटल रिपोर्ट SMS और प्रिंट में।' :
-               'Advanced technology checks 50+ parameters. NABL approved, digital report via SMS and print.'}
-            </p>
+            <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+              {locale === 'mr' ? 'प्रमुख वैशिष्ट्ये' : locale === 'hi' ? 'मुख्य विशेषताएं' : 'Key Features'}
+            </h3>
 
             <div className="space-y-3 mb-8">
               {highlights.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="mt-1 flex-shrink-0">
-                    <FaCheckCircle className="w-5 h-5 text-primary-600" />
-                  </div>
+                <div key={index} className="flex items-start gap-3 p-3 bg-neutral-50 rounded-lg border border-neutral-200">
+                  <FaCheckCircle className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
                   <span className="text-neutral-700">{item[locale]}</span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-neutral-200">
+            <div className="bg-gradient-to-br from-primary-600 to-blue-700 rounded-lg p-6 text-white">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary-600">90<span className="text-lg">
-                    {locale === 'mr' ? 'से' : locale === 'hi' ? 'से' : 's'}
-                  </span></div>
-                  <div className="text-sm text-neutral-600 mt-1">
+                  <div className="text-3xl font-bold">90<span className="text-lg">s</span></div>
+                  <div className="text-xs text-white/90 mt-1">
                     {locale === 'mr' ? 'रिपोर्ट वेळ' : locale === 'hi' ? 'रिपोर्ट समय' : 'Report Time'}
                   </div>
                 </div>
-                <div className="border-x border-neutral-200">
-                  <div className="text-3xl font-bold text-primary-600">50+</div>
-                  <div className="text-sm text-neutral-600 mt-1">
+                <div className="border-x border-white/20">
+                  <div className="text-3xl font-bold">50+</div>
+                  <div className="text-xs text-white/90 mt-1">
                     {locale === 'mr' ? 'पॅरामीटर्स' : locale === 'hi' ? 'पैरामीटर' : 'Parameters'}
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary-600">100%</div>
-                  <div className="text-sm text-neutral-600 mt-1">
+                  <div className="text-3xl font-bold">100%</div>
+                  <div className="text-xs text-white/90 mt-1">
                     {locale === 'mr' ? 'अचूक' : locale === 'hi' ? 'सटीक' : 'Accurate'}
                   </div>
                 </div>
