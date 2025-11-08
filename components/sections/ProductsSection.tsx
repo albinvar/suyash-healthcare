@@ -6,10 +6,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   FaTimes,
   FaCheckCircle,
-  FaShoppingCart,
-  FaWhatsapp,
-  FaLeaf,
-  FaAward
+  FaWhatsapp
 } from 'react-icons/fa';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 

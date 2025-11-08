@@ -19,7 +19,6 @@ import {
   FaCheckCircle,
   FaEnvelope,
   FaPhone,
-  FaArrowRight,
 } from "react-icons/fa";
 
 export default function JobsSection() {
