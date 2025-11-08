@@ -267,7 +267,7 @@ export default function JobsSection() {
             </div>
 
             {/* Why Join Us */}
-            <div className="bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-lg shadow-lg p-6 mb-6">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg shadow-lg p-6 mb-6">
               <h3 className="text-lg font-semibold text-white mb-4">
                 {locale === 'mr' ? 'आमच्यात सामील व्हा का?' :
                  locale === 'hi' ? 'हमसे क्यों जुड़ें?' :
