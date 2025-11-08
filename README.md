@@ -105,6 +105,7 @@ The homepage has placeholder sections:
 - About (आमच्याबद्दल)
 - Machine/Equipment (आमचे यंत्र)
 - Products (उत्पादने)
+- Jobs (नोकऱ्या)
 - Services (सेवा)
 - Contact (संपर्क)
 

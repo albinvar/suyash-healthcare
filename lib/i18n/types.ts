@@ -9,6 +9,7 @@ export interface Translations {
     about: string;
     ourMachine: string;
     products: string;
+    jobs: string;
     services: string;
     contact: string;
     learnMore: string;

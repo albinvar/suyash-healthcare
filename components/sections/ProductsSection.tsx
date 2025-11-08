@@ -84,7 +84,7 @@ const products: Product[] = [
       en: 'Adults: 15-30ml twice daily, Children (above 5 years): 10-15ml twice daily, Best consumed on empty stomach',
       hi: 'वयस्क: दिन में दो बार 15-30ml, बच्चे (5 साल से अधिक): दिन में दो बार 10-15ml, खाली पेट लें'
     },
-    price: '₹500',
+    price: '₹999',
     category: 'ayurvedic',
     image: '/assets/images/products/dybon-noni-syrup.png',
     inStock: true
@@ -121,7 +121,7 @@ const products: Product[] = [
       en: 'Seek professional healthcare guidance before consumption, Follow dosage recommendations from qualified practitioners',
       hi: 'सेवन से पहले पेशेवर स्वास्थ्य मार्गदर्शन लें, योग्य चिकित्सकों की सिफारिशों का पालन करें'
     },
-    price: '₹499',
+    price: '₹999',
     category: 'healthcare',
     image: '/assets/images/products/ve-cover-syrup.png',
     inStock: true
@@ -158,7 +158,7 @@ const products: Product[] = [
       en: 'Take as directed on packaging, Best results when paired with healthy diet and exercise',
       hi: 'पैकेजिंग पर निर्देशित अनुसार लें, स्वस्थ आहार और व्यायाम के साथ सर्वोत्तम परिणाम'
     },
-    price: '₹799',
+    price: '₹999',
     category: 'healthcare',
     image: '/assets/images/products/slim-fit-capsules.png',
     inStock: true
@@ -195,7 +195,7 @@ const products: Product[] = [
       en: 'Mix 5-10gm powder in warm water. Take twice daily before meals or as directed by qualified Ayurvedic practitioner',
       hi: '5-10gm पाउडर को गुनगुने पानी में मिलाएं। भोजन से पहले दिन में दो बार लें या योग्य आयुर्वेदिक चिकित्सक के निर्देशानुसार'
     },
-    price: '₹300',
+    price: '₹999',
     category: 'healthcare',
     image: '/assets/images/products/dybon-powder.jpg',
     inStock: true

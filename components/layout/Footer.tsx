@@ -14,6 +14,7 @@ export default function Footer() {
     { href: '#about', label: t.common.about },
     { href: '#machine', label: t.common.ourMachine },
     { href: '#products', label: t.common.products },
+    { href: '#jobs', label: t.common.jobs },
     { href: '#services', label: t.common.services },
     { href: '#contact', label: t.common.contact },
   ];
