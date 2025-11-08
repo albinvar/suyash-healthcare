@@ -259,112 +259,77 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="py-24 lg:py-32 relative overflow-hidden bg-white">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/30" />
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-20" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary-100 rounded-full blur-3xl opacity-20" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20" ref={ref}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary-50 border border-primary-200"
-          >
-            <FaLeaf className="text-primary-600" />
-            <span className="text-primary-700 font-semibold text-sm">
-              {locale === 'mr' ? '१००% नैसर्गिक उत्पादने' : locale === 'hi' ? '१००% प्राकृतिक उत्पाद' : '100% Natural Products'}
-            </span>
-            <FaAward className="text-primary-600" />
-          </motion.div>
-
+    <section id="products" className="py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header - Minimal */}
+        <div className="text-center mb-12" ref={ref}>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-6"
+            transition={{ duration: 0.6 }}
+            className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4"
           >
-            {locale === 'mr' ? 'आमची प्रीमियम उत्पादने' : locale === 'hi' ? 'हमारे प्रीमियम उत्पाद' : 'Our Premium Products'}
+            {locale === 'mr' ? 'आमची उत्पादने' : locale === 'hi' ? 'हमारे उत्पाद' : 'Our Products'}
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-base text-neutral-600 max-w-2xl mx-auto"
           >
             {locale === 'mr' ?
-              'पारंपरिक आयुर्वेदिक शहाणपणा आणि आधुनिक विज्ञान यांचे संयोजन करून तयार केलेली प्रमाणित उत्पादने' :
+              'आयुर्वेदिक आणि नैसर्गिक आरोग्य उत्पादने' :
              locale === 'hi' ?
-              'पारंपरिक आयुर्वेदिक ज्ञान और आधुनिक विज्ञान को मिलाकर तैयार किए गए प्रमाणित उत्पाद' :
-             'Certified products crafted with traditional Ayurvedic wisdom and modern science'}
+              'आयुर्वेदिक और प्राकृतिक स्वास्थ्य उत्पाद' :
+             'Ayurvedic and Natural Health Products'}
           </motion.p>
         </div>
 
-        {/* Products Grid - Single Row on Desktop */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        {/* Products Grid - Minimal Design */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="group"
             >
-              {/* Product Card */}
-              <div className="bg-white rounded-3xl overflow-hidden border-2 border-neutral-100 hover:border-primary-200 transition-all duration-500 shadow-lg hover:shadow-2xl cursor-pointer"
+              {/* Product Card - Minimal */}
+              <div
+                className="bg-white border border-neutral-200 hover:border-neutral-300 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 h-full flex flex-col"
                 onClick={() => setSelectedProduct(product)}
               >
-                {/* Image Section */}
-                <div className="relative aspect-square bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden">
+                {/* Image */}
+                <div className="relative aspect-square bg-neutral-50">
                   <Image
                     src={product.image}
                     alt={product.name[locale]}
                     fill
-                    className="object-contain p-12 group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain p-6"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                   />
-
-                  {/* Floating Badge */}
-                  <div className="absolute top-6 left-6">
-                    <div className="bg-primary-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
-                      {locale === 'mr' ? 'प्रीमियम' : locale === 'hi' ? 'प्रीमियम' : 'Premium'}
-                    </div>
-                  </div>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Content Section */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+                {/* Content */}
+                <div className="p-4 flex flex-col flex-grow">
+                  <h3 className="font-semibold text-neutral-900 text-base mb-1">
                     {product.name[locale]}
                   </h3>
 
-                  <p className="text-neutral-600 mb-6 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
                     {product.shortDescription[locale]}
                   </p>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-sm text-neutral-500 mb-1">
-                        {locale === 'mr' ? 'किंमत' : locale === 'hi' ? 'कीमत' : 'Price'}
-                      </span>
-                      <span className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
-                        {product.price}
-                      </span>
-                    </div>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="text-lg font-semibold text-neutral-900">
+                      {product.price}
+                    </span>
 
-                    <button className="flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105">
-                      <span>{locale === 'mr' ? 'तपशील' : locale === 'hi' ? 'विवरण' : 'Details'}</span>
-                      <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                    <button className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors">
+                      {locale === 'mr' ? 'पहा →' : locale === 'hi' ? 'देखें →' : 'View →'}
                     </button>
                   </div>
                 </div>
@@ -373,252 +338,237 @@ export default function ProductsSection() {
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section - Minimal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.5 }}
+          className="mt-12 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl border border-primary-100">
-            <div className="flex items-center gap-2">
-              <FaWhatsapp className="text-green-600 text-2xl" />
-              <span className="text-neutral-700 font-medium">
-                {locale === 'mr' ? 'अधिक माहितीसाठी संपर्क करा' :
-                 locale === 'hi' ? 'अधिक जानकारी के लिए संपर्क करें' :
-                 'Contact us for more information'}
-              </span>
-            </div>
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
-            >
-              WhatsApp
-            </a>
-          </div>
+          <p className="text-sm text-neutral-600 mb-3">
+            {locale === 'mr' ? 'अधिक माहितीसाठी' :
+             locale === 'hi' ? 'अधिक जानकारी के लिए' :
+             'For more information'}
+          </p>
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium transition-colors"
+          >
+            <FaWhatsapp className="text-lg" />
+            <span>WhatsApp</span>
+          </a>
         </motion.div>
 
-        {/* Product Detail Modal */}
+        {/* Product Detail Modal - Clean & Responsive */}
         <AnimatePresence>
           {selectedProduct && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
               onClick={() => !formSubmitted && setSelectedProduct(null)}
             >
               <motion.div
-                initial={{ scale: 0.9, y: 30 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 30 }}
-                className="bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 20, opacity: 0 }}
+                className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
-                <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-neutral-200 p-6 flex items-center justify-between z-10 rounded-t-3xl">
-                  <div>
-                    <h2 className="text-3xl font-bold text-neutral-900">
-                      {selectedProduct.name[locale]}
-                    </h2>
-                    <p className="text-primary-600 font-medium mt-1">
-                      {selectedProduct.price}
-                    </p>
-                  </div>
+                <div className="sticky top-0 bg-white border-b border-neutral-200 px-6 py-4 flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-neutral-900">
+                    {selectedProduct.name[locale]}
+                  </h2>
                   <button
                     onClick={() => !formSubmitted && setSelectedProduct(null)}
-                    className="p-3 hover:bg-neutral-100 rounded-full transition-colors"
+                    className="p-1 hover:bg-neutral-100 rounded transition-colors"
                   >
-                    <FaTimes className="w-6 h-6" />
+                    <FaTimes className="w-4 h-4 text-neutral-600" />
                   </button>
                 </div>
 
-                <div className="p-8 lg:p-12">
-                  <div className="grid lg:grid-cols-2 gap-10">
-                    {/* Left - Image */}
-                    <div>
-                      <div className="relative aspect-square bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-2xl overflow-hidden mb-6 border-2 border-neutral-100">
-                        <Image
-                          src={selectedProduct.image}
-                          alt={selectedProduct.name[locale]}
-                          fill
-                          className="object-contain p-12"
-                          sizes="50vw"
-                        />
-                      </div>
-
-                      {/* Share Button */}
-                      <button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3.5 rounded-xl transition-all font-medium shadow-lg hover:shadow-xl">
-                        <FaWhatsapp className="text-xl" />
-                        <span>{locale === 'mr' ? 'WhatsApp वर शेअर करा' : locale === 'hi' ? 'WhatsApp पर शेयर करें' : 'Share on WhatsApp'}</span>
-                      </button>
-                    </div>
-
-                    {/* Right - Details & Form */}
-                    <div>
-                      {/* Description */}
-                      <div className="mb-8">
-                        <p className="text-neutral-700 leading-relaxed text-lg mb-6">
-                          {selectedProduct.fullDescription[locale]}
-                        </p>
-
-                        {/* Stock Badge */}
-                        {selectedProduct.inStock && (
-                          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm bg-green-50 text-green-700 font-medium border border-green-200">
-                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                            {locale === 'mr' ? 'स्टॉकमध्ये उपलब्ध' : locale === 'hi' ? 'स्टॉक में उपलब्ध' : 'In Stock'}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Benefits */}
-                      <div className="mb-8">
-                        <h3 className="font-bold text-neutral-900 mb-4 text-xl">
-                          {locale === 'mr' ? 'फायदे' : locale === 'hi' ? 'लाभ' : 'Benefits'}
-                        </h3>
-                        <ul className="space-y-3">
-                          {selectedProduct.benefits[locale].map((benefit, i) => (
-                            <li key={i} className="flex items-start gap-3 text-neutral-700">
-                              <FaCheckCircle className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" />
-                              <span className="leading-relaxed">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Ingredients */}
-                      <div className="mb-8 p-5 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl border border-neutral-200">
-                        <h3 className="font-bold text-neutral-900 mb-2 flex items-center gap-2">
-                          <FaLeaf className="text-primary-600" />
-                          {locale === 'mr' ? 'घटक' : locale === 'hi' ? 'सामग्री' : 'Ingredients'}
-                        </h3>
-                        <p className="text-neutral-700">
-                          {selectedProduct.ingredients[locale]}
-                        </p>
-                      </div>
-
-                      {/* How to Use */}
-                      <div className="mb-8 p-5 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl border border-primary-200">
-                        <h3 className="font-bold text-neutral-900 mb-2">
-                          {locale === 'mr' ? 'वापरण्याची पद्धत' : locale === 'hi' ? 'उपयोग की विधि' : 'How to Use'}
-                        </h3>
-                        <p className="text-neutral-700">
-                          {selectedProduct.howToUse[locale]}
-                        </p>
-                      </div>
-
-                      {/* Contact Form */}
-                      {formSubmitted ? (
-                        <motion.div
-                          initial={{ scale: 0.8 }}
-                          animate={{ scale: 1 }}
-                          className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-300 rounded-2xl p-10 text-center"
-                        >
-                          <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <FaCheckCircle className="w-10 h-10 text-white" />
-                          </div>
-                          <h3 className="text-3xl font-bold text-green-900 mb-3">
-                            {locale === 'mr' ? 'धन्यवाद!' : locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
-                          </h3>
-                          <p className="text-green-700 text-lg">
-                            {locale === 'mr' ? 'आम्ही लवकरच संपर्क करू' :
-                             locale === 'hi' ? 'हम जल्द ही संपर्क करेंगे' :
-                             'We will contact you soon'}
-                          </p>
-                        </motion.div>
-                      ) : (
-                        <form onSubmit={handleSubmit} className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-7 border-2 border-neutral-200">
-                          <h3 className="font-bold text-neutral-900 mb-6 text-xl flex items-center gap-2">
-                            <FaShoppingCart className="text-primary-600" />
-                            {locale === 'mr' ? 'ऑर्डर करा' : locale === 'hi' ? 'ऑर्डर करें' : 'Place Order'}
-                          </h3>
-
-                          <div className="space-y-4">
-                            <div>
-                              <input
-                                type="text"
-                                placeholder={locale === 'mr' ? 'नाव *' : locale === 'hi' ? 'नाम *' : 'Name *'}
-                                value={formData.name}
-                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                className={`w-full px-5 py-3.5 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
-                                  formErrors.name ? 'border-red-500' : 'border-neutral-200'
-                                }`}
-                              />
-                              {formErrors.name && (
-                                <p className="text-red-500 text-sm mt-1.5">{formErrors.name}</p>
-                              )}
-                            </div>
-
-                            <div>
-                              <input
-                                type="tel"
-                                placeholder={locale === 'mr' ? 'फोन नंबर *' : locale === 'hi' ? 'फोन नंबर *' : 'Phone Number *'}
-                                value={formData.phone}
-                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                className={`w-full px-5 py-3.5 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
-                                  formErrors.phone ? 'border-red-500' : 'border-neutral-200'
-                                }`}
-                              />
-                              {formErrors.phone && (
-                                <p className="text-red-500 text-sm mt-1.5">{formErrors.phone}</p>
-                              )}
-                            </div>
-
-                            <div>
-                              <input
-                                type="email"
-                                placeholder={locale === 'mr' ? 'ईमेल' : locale === 'hi' ? 'ईमेल' : 'Email'}
-                                value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className={`w-full px-5 py-3.5 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
-                                  formErrors.email ? 'border-red-500' : 'border-neutral-200'
-                                }`}
-                              />
-                              {formErrors.email && (
-                                <p className="text-red-500 text-sm mt-1.5">{formErrors.email}</p>
-                              )}
-                            </div>
-
-                            <div>
-                              <input
-                                type="text"
-                                placeholder={locale === 'mr' ? 'शहर *' : locale === 'hi' ? 'शहर *' : 'City *'}
-                                value={formData.city}
-                                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                                className={`w-full px-5 py-3.5 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
-                                  formErrors.city ? 'border-red-500' : 'border-neutral-200'
-                                }`}
-                              />
-                              {formErrors.city && (
-                                <p className="text-red-500 text-sm mt-1.5">{formErrors.city}</p>
-                              )}
-                            </div>
-
-                            <div>
-                              <textarea
-                                placeholder={locale === 'mr' ? 'संदेश/प्रमाण' : locale === 'hi' ? 'संदेश/मात्रा' : 'Message/Quantity'}
-                                value={formData.message}
-                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                rows={3}
-                                className="w-full px-5 py-3.5 border-2 border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
-                              />
-                            </div>
-
-                            <button
-                              type="submit"
-                              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-lg shadow-primary-500/30 hover:shadow-xl hover:scale-[1.02]"
-                            >
-                              <FaShoppingCart className="text-xl" />
-                              {locale === 'mr' ? 'ऑर्डर करा' : locale === 'hi' ? 'ऑर्डर करें' : 'Place Order'}
-                            </button>
-                          </div>
-                        </form>
-                      )}
-                    </div>
+                <div className="p-6">
+                  {/* Product Image - Mobile Responsive */}
+                  <div className="relative aspect-[4/3] sm:aspect-video bg-neutral-50 rounded-lg overflow-hidden mb-6">
+                    <Image
+                      src={selectedProduct.image}
+                      alt={selectedProduct.name[locale]}
+                      fill
+                      className="object-contain p-4 sm:p-6"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                      priority
+                    />
                   </div>
+
+                  {/* Price & Stock */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-semibold text-neutral-900">
+                      {selectedProduct.price}
+                    </span>
+                    {selectedProduct.inStock && (
+                      <span className="text-sm text-green-600">
+                        {locale === 'mr' ? '✓ उपलब्ध' : locale === 'hi' ? '✓ उपलब्ध' : '✓ In Stock'}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-neutral-700 leading-relaxed mb-6">
+                    {selectedProduct.fullDescription[locale]}
+                  </p>
+
+                  {/* Benefits */}
+                  <div className="mb-6">
+                    <h3 className="font-medium text-neutral-900 mb-3">
+                      {locale === 'mr' ? 'फायदे' : locale === 'hi' ? 'लाभ' : 'Benefits'}
+                    </h3>
+                    <ul className="space-y-2">
+                      {selectedProduct.benefits[locale].map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-neutral-600">
+                          <FaCheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Ingredients & Usage - Collapsible on Mobile */}
+                  <details className="mb-6 border border-neutral-200 rounded-lg">
+                    <summary className="px-4 py-3 font-medium text-sm text-neutral-900 cursor-pointer hover:bg-neutral-50">
+                      {locale === 'mr' ? 'घटक आणि वापर' : locale === 'hi' ? 'सामग्री और उपयोग' : 'Ingredients & Usage'}
+                    </summary>
+                    <div className="px-4 pb-4 pt-2 space-y-4 text-sm text-neutral-600">
+                      <div>
+                        <span className="font-medium text-neutral-700">
+                          {locale === 'mr' ? 'घटक:' : locale === 'hi' ? 'सामग्री:' : 'Ingredients:'}
+                        </span>
+                        <p className="mt-1">{selectedProduct.ingredients[locale]}</p>
+                      </div>
+                      <div>
+                        <span className="font-medium text-neutral-700">
+                          {locale === 'mr' ? 'वापर:' : locale === 'hi' ? 'उपयोग:' : 'Usage:'}
+                        </span>
+                        <p className="mt-1">{selectedProduct.howToUse[locale]}</p>
+                      </div>
+                    </div>
+                  </details>
+
+                  {/* Contact Form - Simplified */}
+                  {formSubmitted ? (
+                    <motion.div
+                      initial={{ scale: 0.95 }}
+                      animate={{ scale: 1 }}
+                      className="text-center py-8"
+                    >
+                      <FaCheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
+                      <h3 className="text-lg font-semibold text-neutral-900 mb-1">
+                        {locale === 'mr' ? 'धन्यवाद!' : locale === 'hi' ? 'धन्यवाद!' : 'Thank You!'}
+                      </h3>
+                      <p className="text-sm text-neutral-600">
+                        {locale === 'mr' ? 'आम्ही लवकरच संपर्क करू' :
+                         locale === 'hi' ? 'हम जल्द ही संपर्क करेंगे' :
+                         'We will contact you soon'}
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <div>
+                      <h3 className="font-medium text-neutral-900 mb-4">
+                        {locale === 'mr' ? 'ऑर्डर करा' : locale === 'hi' ? 'ऑर्डर करें' : 'Order Now'}
+                      </h3>
+
+                      <form onSubmit={handleSubmit} className="space-y-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div>
+                            <input
+                              type="text"
+                              placeholder={locale === 'mr' ? 'नाव *' : locale === 'hi' ? 'नाम *' : 'Name *'}
+                              value={formData.name}
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 ${
+                                formErrors.name ? 'border-red-500' : 'border-neutral-300'
+                              }`}
+                            />
+                            {formErrors.name && (
+                              <p className="text-red-500 text-xs mt-0.5">{formErrors.name}</p>
+                            )}
+                          </div>
+
+                          <div>
+                            <input
+                              type="tel"
+                              placeholder={locale === 'mr' ? 'फोन *' : locale === 'hi' ? 'फोन *' : 'Phone *'}
+                              value={formData.phone}
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 ${
+                                formErrors.phone ? 'border-red-500' : 'border-neutral-300'
+                              }`}
+                            />
+                            {formErrors.phone && (
+                              <p className="text-red-500 text-xs mt-0.5">{formErrors.phone}</p>
+                            )}
+                          </div>
+
+                          <div>
+                            <input
+                              type="email"
+                              placeholder={locale === 'mr' ? 'ईमेल' : locale === 'hi' ? 'ईमेल' : 'Email'}
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 ${
+                                formErrors.email ? 'border-red-500' : 'border-neutral-300'
+                              }`}
+                            />
+                            {formErrors.email && (
+                              <p className="text-red-500 text-xs mt-0.5">{formErrors.email}</p>
+                            )}
+                          </div>
+
+                          <div>
+                            <input
+                              type="text"
+                              placeholder={locale === 'mr' ? 'शहर *' : locale === 'hi' ? 'शहर *' : 'City *'}
+                              value={formData.city}
+                              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 ${
+                                formErrors.city ? 'border-red-500' : 'border-neutral-300'
+                              }`}
+                            />
+                            {formErrors.city && (
+                              <p className="text-red-500 text-xs mt-0.5">{formErrors.city}</p>
+                            )}
+                          </div>
+                        </div>
+
+                        <textarea
+                          placeholder={locale === 'mr' ? 'संदेश' : locale === 'hi' ? 'संदेश' : 'Message'}
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          rows={2}
+                          className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none"
+                        />
+
+                        <div className="flex gap-3 pt-2">
+                          <button
+                            type="submit"
+                            className="flex-1 bg-neutral-900 hover:bg-neutral-800 text-white py-2.5 rounded-md font-medium text-sm transition-colors"
+                          >
+                            {locale === 'mr' ? 'ऑर्डर पाठवा' : locale === 'hi' ? 'ऑर्डर भेजें' : 'Submit Order'}
+                          </button>
+                          <a
+                            href="https://wa.me/919876543210"
+                            className="flex-1 border border-green-600 text-green-600 hover:bg-green-50 py-2.5 rounded-md font-medium text-sm transition-colors text-center"
+                          >
+                            WhatsApp
+                          </a>
+                        </div>
+                      </form>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </motion.div>

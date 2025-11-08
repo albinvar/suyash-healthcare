@@ -114,21 +114,27 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [progress, setProgress] = useState(0);
   const { locale } = useLanguage();
+
+  const AUTOPLAY_INTERVAL = 6000; // 6 seconds
 
   const nextSlide = useCallback(() => {
     setDirection(1);
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setProgress(0);
   }, []);
 
   const prevSlide = useCallback(() => {
     setDirection(-1);
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setProgress(0);
   }, []);
 
   const goToSlide = (index: number) => {
     setDirection(index > currentSlide ? 1 : -1);
     setCurrentSlide(index);
+    setProgress(0);
   };
 
   const handleScroll = (sectionId: string) => {
@@ -138,15 +144,35 @@ export default function HeroCarousel() {
     }
   };
 
-  // Auto-play functionality
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [nextSlide, prevSlide]);
+
+  // Auto-play functionality with progress
   useEffect(() => {
     if (isPaused) return;
 
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 8000);
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          nextSlide();
+          return 0;
+        }
+        return prev + (100 / (AUTOPLAY_INTERVAL / 50));
+      });
+    }, 50);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(progressInterval);
   }, [isPaused, nextSlide]);
 
   const slide = slides[currentSlide];
@@ -254,8 +280,11 @@ export default function HeroCarousel() {
                       {slide.stats.map((stat, index) => (
                         <motion.div
                           key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
                           whileHover={{ scale: 1.05, y: -5 }}
-                          className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                          className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/15 transition-colors"
                         >
                           <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
                             {stat.value}
