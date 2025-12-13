@@ -179,7 +179,7 @@ export default function JobsSection() {
                     <FaChartLine className="w-8 h-8 flex-shrink-0 mt-1" />
                   )}
                   <div>
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="text-xl font-bold mb-2 text-white">
                       {roles[selectedRole].title[locale]}
                     </h3>
                     <p className="text-sm text-white/90">
@@ -334,7 +334,7 @@ export default function JobsSection() {
 
             {/* Call to Action */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg p-6 text-white">
-              <h3 className="text-xl font-bold mb-2">
+              <h3 className="text-xl font-bold mb-2 text-green-400">
                 {locale === 'mr' ? 'आजच अर्ज करा!' : locale === 'hi' ? 'आज ही आवेदन करें!' : 'Apply Today!'}
               </h3>
               <p className="text-sm text-white/90 mb-6">
@@ -376,14 +376,7 @@ export default function JobsSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12 p-4 bg-neutral-50 rounded-lg"
         >
-          <p className="text-sm text-neutral-600">
-            <span className="font-medium text-neutral-700">
-              {locale === 'mr' ? 'टीप:' : locale === 'hi' ? 'नोट:' : 'Note:'}
-            </span>{' '}
-            {locale === 'mr' ? 'कोणतेही मार्केटिंग कार्य नाही • सर्व लिंगांसाठी समान संधी • मोफत निवास आणि प्रवास सुविधा' :
-             locale === 'hi' ? 'कोई मार्केटिंग कार्य नहीं • सभी लिंगों के लिए समान अवसर • मुफ्त आवास और यात्रा सुविधा' :
-             'No marketing work involved • Equal opportunities for all genders • Free accommodation and travel facilities'}
-          </p>
+
         </motion.div>
       </div>
     </section>

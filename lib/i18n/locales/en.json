@@ -2,6 +2,7 @@
   "common": {
     "home": "Home",
     "about": "About",
+    "key": "Key Highlights",
     "ourMachine": "Our Machine",
     "products": "Products",
     "jobs": "Jobs",
@@ -99,7 +100,7 @@
       "address": "Address",
       "addressText": "Suyash Health Care Centre, Maharashtra, India",
       "phone": "Phone",
-      "phoneText": "+91 XXXXX XXXXX",
+      "phoneText": "+918291717196",
       "email": "Email",
       "emailText": "info@suyashhealthcare.com",
       "hours": "Business Hours",
@@ -128,8 +129,13 @@
     "contactInfo": {
       "title": "Contact Information",
       "address": "Maharashtra, India",
-      "phone": "+91 XXXXX XXXXX",
+      "phone": "+918291717196",
       "email": "info@suyashhealthcare.com"
+    },
+    "branchesInfo": {
+      "title": "Maharashtra Branches",
+      "total": 13,
+      "sentence": "Total Branches in maharashtra : {total}"
     },
     "socialMedia": {
       "title": "Social Media",

@@ -2,6 +2,7 @@
   "common": {
     "home": "होम",
     "about": "आमच्याबद्दल",
+    "key": "महत्त्वाचे मुद्दे",
     "ourMachine": "आमचे यंत्र",
     "products": "उत्पादने",
     "jobs": "नोकऱ्या",
@@ -99,7 +100,7 @@
       "address": "पत्ता",
       "addressText": "सुयश हेल्थ केअर सेंटर, महाराष्ट्र, भारत",
       "phone": "फोन",
-      "phoneText": "+91 XXXXX XXXXX",
+      "phoneText": "+918291717196",
       "email": "ईमेल",
       "emailText": "info@suyashhealthcare.com",
       "hours": "व्यवसाय वेळ",
@@ -128,8 +129,13 @@
     "contactInfo": {
       "title": "संपर्क माहिती",
       "address": "महाराष्ट्र, भारत",
-      "phone": "+91 XXXXX XXXXX",
+      "phone": "+918291717196",
       "email": "info@suyashhealthcare.com"
+    },
+    "branchesInfo": {
+      "title": "महाराष्ट्र शाखा",
+      "total": 13,
+      "sentence": "महाराष्ट्र मध्ये कुल शाखा : {total}"
     },
     "socialMedia": {
       "title": "सोशल मीडिया",

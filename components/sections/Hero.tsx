@@ -124,12 +124,12 @@ export default function Hero() {
               >
                 {t.hero.ctaPrimary}
               </button>
-              <button
+              {/* <button
                 onClick={() => handleScroll('products')}
                 className="btn-outline px-8 py-4 text-lg"
               >
                 {t.hero.ctaSecondary}
-              </button>
+              </button> */}
             </motion.div>
           </motion.div>
 

@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { FaHeartbeat, FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from 'react-icons/fa';
-import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+import { FaHeartbeat, FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FiMail, FiPhone, FiMapPin, FiClock, FiHome } from 'react-icons/fi';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { motion } from 'framer-motion';
 
@@ -13,7 +13,7 @@ export default function Footer() {
     { href: '#home', label: t.common.home },
     { href: '#about', label: t.common.about },
     { href: '#machine', label: t.common.ourMachine },
-    { href: '#products', label: t.common.products },
+    // { href: '#products', label: t.common.products },
     { href: '#jobs', label: t.common.jobs },
     { href: '#services', label: t.common.services },
     { href: '#contact', label: t.common.contact },
@@ -22,26 +22,26 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'Facebook',
-      href: 'https://facebook.com',
+      href: 'https://www.facebook.com/share/1GuhMkZ5nd/',
       icon: FaFacebook,
       color: 'hover:text-blue-600',
     },
     {
       name: 'Instagram',
-      href: 'https://instagram.com',
+      href: 'https://www.instagram.com/suyashhealthcare?igsh=YXp5MGJxajUwb2ww',
       icon: FaInstagram,
       color: 'hover:text-pink-600',
     },
     {
       name: 'WhatsApp',
-      href: 'https://wa.me/91XXXXXXXXXX',
+      href: 'https://wa.me/918291717196',
       icon: FaWhatsapp,
       color: 'hover:text-green-600',
     },
     {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com',
-      icon: FaLinkedin,
+      name: 'Youtube',
+      href: 'https://youtube.com/@suyashhealthcarepune',
+      icon: FaYoutube,
       color: 'hover:text-blue-700',
     },
   ];
@@ -136,8 +136,24 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Branches Info Column */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-white">
+              {t.footer.branchesInfo.title}
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start space-x-3 text-sm">
+              <FiHome className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                <span className="text-neutral-300">
+                  {t.footer.branchesInfo.sentence.replace('{total}', t.footer.branchesInfo.total.toString())}
+                </span>
+              </li>
+            </ul>
+          </div>
+
+
           {/* Social Media & Business Hours Column */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Social Media */}
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-white">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaCalendar, FaUsers, FaHandHoldingHeart, FaAward, FaCheckCircle } from 'react-icons/fa';
+import { FaCalendar, FaUsers, FaHandHoldingHeart, FaAward, FaBriefcase } from 'react-icons/fa';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface StatCardProps {
@@ -94,12 +94,12 @@ export default function AboutSection() {
     },
     {
       icon: <FaUsers className="w-5 h-5" />,
-      value: 50000,
+      value: 10000000,
       suffix: '+',
       label: {
-        mr: 'सेवा केलेले नागरिक',
+        mr: 'सेवकर्मचाऱ्यांची संख्या',
         en: 'People Served',
-        hi: 'सेवा किए गए नागरिक'
+        hi: 'सेवाकर्मियों की संख्या'
       }
     },
     {
@@ -111,11 +111,31 @@ export default function AboutSection() {
         en: 'Years of Experience',
         hi: 'अनुभव के वर्ष'
       }
-    }
+    },
+    {
+      icon: <FaBriefcase className="w-5 h-5" />,
+      value: 1000,
+      suffix: '+',
+      label: {
+        mr: 'डॉक्टरांना दिलेल्या नोकऱ्या',
+        en: 'Jobs given to doctors',
+        hi: 'डॉक्टरों को दी गई नौकरियाँ'
+      }
+    },
+    {
+      icon: <FaBriefcase className="w-5 h-5" />,
+      value: 1000,
+      suffix: '+',
+      label: {
+        mr: 'नर्सांना प्रदान केलेल्या नोकऱ्या',
+        en: 'Jobs given to Nurses',
+        hi: 'नर्सों को प्रदान की गई नौकरियाँ'
+      }
+    },
   ];
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-neutral-50">
+    <section id="about" className="py-2 lg:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12" ref={ref}>
           {/* Left Side - Main Content */}
@@ -134,17 +154,17 @@ export default function AboutSection() {
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {locale === 'mr' ? 'युनुस शेख - एक प्रेरणादायी प्रवास' :
                locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
-               'Yunus Sheikh - An Inspiring Journey'}
+               'Suyash Health Care - An Inspiring Journey'}
             </h2>
 
             {/* Main Content */}
             <div className="space-y-4 text-neutral-700 leading-relaxed text-base lg:text-lg">
               <p>
                 {locale === 'mr' ?
-                  'युनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
+                  'व्यवस्थापकीय संचालक (एमडी): यूनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
                   locale === 'hi' ?
-                  'युनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
-                  'Yunus Sheikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
+                  'प्रबंध निदेशक (एमडी): यूनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
+                  'Managing Director(MD). Yunus Shaikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
                 }
               </p>
 
@@ -168,13 +188,12 @@ export default function AboutSection() {
               <h3 className="text-base font-semibold text-neutral-900 mb-3">
                 {locale === 'mr' ? 'आमचे ध्येय' : locale === 'hi' ? 'हमारा उद्देश्य' : 'Our Mission'}
               </h3>
-              <p className="text-neutral-600 leading-relaxed text-sm">
+              <p className="text-neutral-600 leading-relaxed text-md">
                 {locale === 'mr' ?
-                  'आता याच अनुभवाच्या जोरावर, युनुस शेख आपल्या सर्वांसाठी एक नवी व्यवसायाची संधी घेऊन आले आहेत. ही संधी म्हणजे केवळ उत्पन्नाचं साधन नाही, तर समाजासाठी काहीतरी करण्याची संधी देखील आहे.' :
+                  ' आमचे उद्दिष्ट आहे की आमच्या ‘डिजिटल हेल्थ’ मशीनद्वारे संपूर्ण भारतातील लोकांना आरोग्य तपासणीची सुविधा सहज उपलब्ध करून देणे.' :
                   locale === 'hi' ?
-                  'अब इसी अनुभव के बल पर, युनुस शेख आप सभी के लिए एक नया व्यवसाय का अवसर लेकर आए हैं। यह अवसर केवल आय का साधन नहीं है, बल्कि समाज के लिए कुछ करने का अवसर भी है।' :
-                  'Now, with this experience, Yunus Sheikh brings a new business opportunity for everyone. This opportunity is not just a means of income, but also a chance to do something for society.'
-                }
+                    'हमारा उद्देश्य है कि पूरे भारत में लोगों को हमारे ‘डिजिटल हेल्थ’ मशीन के माध्यम से स्वास्थ्य जांच की सुविधा आसानी से उपलब्ध हो।' :
+                    'To make health checkups accessible to people across India through our "Digital Health" Machine'}
               </p>
             </motion.div>
           </motion.div>
@@ -199,45 +218,7 @@ export default function AboutSection() {
             </div>
 
             {/* Highlights Widget */}
-            <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg p-6 text-white">
-              <h3 className="text-lg font-bold text-white mb-5">
-                {locale === 'mr' ? 'मुख्य वैशिष्ट्ये' : locale === 'hi' ? 'मुख्य विशेषताएं' : 'Key Highlights'}
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">
-                    {locale === 'mr' ? 'आयुर्वेदिक सुवर्णप्राशन कार्यक्रम' :
-                     locale === 'hi' ? 'आयुर्वेदिक सुवर्णप्राशन कार्यक्रम' :
-                     'Ayurvedic Suvarnaprashan Program'}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">
-                    {locale === 'mr' ? 'ग्रामीण भागात मोफत आरोग्य सेवा' :
-                     locale === 'hi' ? 'ग्रामीण क्षेत्रों में मुफ्त स्वास्थ्य सेवा' :
-                     'Free Healthcare in Rural Areas'}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">
-                    {locale === 'mr' ? 'नियमित आरोग्य शिबिरे' :
-                     locale === 'hi' ? 'नियमित स्वास्थ्य शिविर' :
-                     'Regular Health Camps'}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaCheckCircle className="w-4 h-4 text-white flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">
-                    {locale === 'mr' ? '20+ वर्षांचा समाजसेवेचा अनुभव' :
-                     locale === 'hi' ? '20+ वर्षों का सामाजिक सेवा अनुभव' :
-                     '20+ Years of Social Service'}
-                  </span>
-                </li>
-              </ul>
-            </div>
+          
           </motion.div>
         </div>
       </div>

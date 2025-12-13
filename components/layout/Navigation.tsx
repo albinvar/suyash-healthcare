@@ -20,8 +20,9 @@ export default function Navigation() {
   const navLinks = [
     { href: '#home', label: t.common.home },
     { href: '#about', label: t.common.about },
+    { href: '#key', label: t.common.key },
     { href: '#machine', label: t.common.ourMachine },
-    { href: '#products', label: t.common.products },
+    // { href: '#products', label: t.common.products },
     { href: '#jobs', label: t.common.jobs },
     { href: '#services', label: t.common.services },
     { href: '#contact', label: t.common.contact },

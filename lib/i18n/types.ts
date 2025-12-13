@@ -7,6 +7,7 @@ export interface Translations {
   common: {
     home: string;
     about: string;
+    key: string;
     ourMachine: string;
     products: string;
     jobs: string;
@@ -46,6 +47,22 @@ export interface Translations {
     missionText: string;
     vision: string;
     visionText: string;
+    features: {
+      quality: string;
+      qualityDesc: string;
+      certified: string;
+      certifiedDesc: string;
+      support: string;
+      supportDesc: string;
+      innovation: string;
+      innovationDesc: string;
+    };
+  };
+
+  key: {
+    heading: string;
+    title: string;
+    description: string;
     features: {
       quality: string;
       qualityDesc: string;
@@ -135,6 +152,11 @@ export interface Translations {
       address: string;
       phone: string;
       email: string;
+    };
+    branchesInfo: {
+      title: string;
+      total: number;
+      sentence: string;
     };
     socialMedia: {
       title: string;
