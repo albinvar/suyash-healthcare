@@ -133,26 +133,26 @@ export default function HeroCarousel() {
           className="absolute inset-0"
         >
           <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="hidden md:grid md:grid-cols-2 h-full items-end gap-10 pb-20">
+            <div className="grid grid-cols-2 h-full items-end gap-10 pb-20">
               {/* CONTENT */}
               <div className="text-white">
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
+                <h1 className="md:text-4xl lg:text-6xl font-bold mb-6 text-white text-lg">
                   {slide.title[locale]}
                 </h1>
 
-                <p className="text-lg text-white/90 mb-8">
+                <p className="md:text-lg text-sm text-white/90 mb-8">
                   {slide.subtitle[locale]}
                 </p>
 
                 {slide.stats && (
-                  <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="md:grid grid-cols-3 gap-4 mb-8 hidden">
                     {slide.stats.map((s, i) => (
                       <div
                         key={i}
                         className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4"
                       >
-                        <div className="text-2xl font-bold">{s.value}</div>
-                        <div className="text-sm text-white/80">
+                        <div className="md:text-2xl text-md font-bold">{s.value}</div>
+                        <div className="md:text-sm text-xs text-white/80">
                           {s.label[locale]}
                         </div>
                       </div>
@@ -160,7 +160,7 @@ export default function HeroCarousel() {
                   </div>
                 )}
 
-                <button className="inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold">
+                <button className=" hidden md:inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold">
                   {slide.ctaText[locale]}
                   <FiArrowRight />
                 </button>
@@ -193,14 +193,14 @@ export default function HeroCarousel() {
       {/* NAVIGATION */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md md:p-3 rounded-full text-white p-1"
       >
         <FiChevronLeft />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md md:p-3 p-1 rounded-full text-white"
       >
         <FiChevronRight />
       </button>
