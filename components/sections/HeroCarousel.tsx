@@ -44,7 +44,7 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    image: '/assets/images/gallery/anchor.png',
+    image: '/logo2.png',
     imagePosition: 'left',
     title: {
       mr: 'मोफत आरोग्य तपासणी शिबिरे',
@@ -58,15 +58,15 @@ const slides: Slide[] = [
     },
     stats: [
       {
-        value: '10,000+',
+        value: '1,00,00,000+',
         label: { mr: 'लाभार्थी', en: 'Beneficiaries', hi: 'लाभार्थी' },
       },
       {
-        value: '50+',
+        value: '100+',
         label: { mr: 'शिबिरे', en: 'Camps', hi: 'शिविर' },
       },
       {
-        value: '15+',
+        value: '70+',
         label: { mr: 'गावे', en: 'Villages', hi: 'गांव' },
       },
     ],
@@ -110,7 +110,7 @@ export default function HeroCarousel() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* 🔹 BLURRED BACKGROUND IMAGE */}
+      {/* 🔹 BLURRED BACKGROUND */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/assets/images/hero/collage.png"
@@ -166,16 +166,21 @@ export default function HeroCarousel() {
                 </button>
               </div>
 
-              {/* IMAGE */}
-              {/* IMAGE */}
-
-              <div className="relative h-full flex items-end">
-                <div className="relative w-[135%] aspect-[4/3] -mr-24 -mb-20">
+              {/* IMAGE (Bottom for slide 1, Center for slide 2) */}
+              <div
+                className="relative h-full flex items-end"
+              >
+                <div
+                  className={`relative ${slide.id === 2
+                      ? 'w-[150%] aspect-square mx-auto'
+                      : 'w-[160%] aspect-[4/3] -mr-32 -mb-28'
+                    }`}
+                >
                   <Image
                     src={slide.image}
                     alt={slide.title[locale]}
                     fill
-                    className="object-contain scale-115"
+                    className="object-contain scale-110"
                   />
                 </div>
               </div>

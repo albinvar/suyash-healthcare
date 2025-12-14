@@ -158,13 +158,13 @@ export default function AboutSection() {
             </h2>
 
             {/* Main Content */}
-            <div className="space-y-4 text-neutral-700 leading-relaxed text-base lg:text-lg">
+            <div className="space-y-4 text-neutral-700 leading-relaxed text-base lg:text-xl">
               <p>
                 {locale === 'mr' ?
                   'व्यवस्थापकीय संचालक (एमडी): यूनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
                   locale === 'hi' ?
                   'प्रबंध निदेशक (एमडी): यूनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
-                  'Managing Director(MD). Yunus Shaikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
+                  'Managing Director(MD). Yunus Shaikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and many more health camps has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
                 }
               </p>
 
@@ -173,7 +173,7 @@ export default function AboutSection() {
                   'पुणे येथे येऊन त्यांनी पुणे ग्रामीण भागात अनेक आरोग्य शिबिरे यशस्वीपणे आयोजित केली असून, त्यांचे हे समाजोपयोगी कार्य आजही अखंडपणे सुरू आहे.' :
                   locale === 'hi' ?
                   'पुणे आकर उन्होंने पुणे ग्रामीण क्षेत्र में कई स्वास्थ्य शिविर सफलतापूर्वक आयोजित किए हैं, और उनका यह सामाजिक कार्य आज भी निरंतर जारी है।' :
-                  'After coming to Pune, he has successfully organized numerous health camps in rural Pune, and this social welfare work continues uninterrupted to this day.'
+                  'After coming to Pune, he has successfully organized numerous health camps in rural Maharashtra, and this social welfare work continues uninterrupted to this day.'
                 }
               </p>
             </div>
@@ -185,10 +185,10 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-8 bg-white rounded-lg p-6 border border-neutral-200"
             >
-              <h3 className="text-base font-semibold text-neutral-900 mb-3">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
                 {locale === 'mr' ? 'आमचे ध्येय' : locale === 'hi' ? 'हमारा उद्देश्य' : 'Our Mission'}
               </h3>
-              <p className="text-neutral-600 leading-relaxed text-md">
+              <p className="text-neutral-600 leading-relaxed text-lg">
                 {locale === 'mr' ?
                   ' आमचे उद्दिष्ट आहे की आमच्या ‘डिजिटल हेल्थ’ मशीनद्वारे संपूर्ण भारतातील लोकांना आरोग्य तपासणीची सुविधा सहज उपलब्ध करून देणे.' :
                   locale === 'hi' ?

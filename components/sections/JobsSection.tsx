@@ -9,13 +9,10 @@ import {
   FaUsers,
   FaRupeeSign,
   FaGraduationCap,
-  FaHandshake,
   FaClock,
   FaChartLine,
   FaHeartbeat,
   FaBullseye,
-  FaRocket,
-  FaHome,
   FaCheckCircle,
   FaEnvelope,
   FaPhone,
@@ -76,10 +73,10 @@ export default function JobsSection() {
   };
 
   const benefits = [
-    { icon: FaRupeeSign, label: { mr: 'प्रशिक्षणादरम्यान', en: 'During Training', hi: 'प्रशिक्षण के दौरान' }, value: '₹25,000/month' },
-    { icon: FaRocket, label: { mr: 'प्रशिक्षणानंतर', en: 'After Training', hi: 'प्रशिक्षण के बाद' }, value: '₹50,000/month' },
-    { icon: FaHome, label: { mr: 'निवास व प्रवास', en: 'Accommodation & Travel', hi: 'आवास और यात्रा' }, value: { mr: 'मोफत', en: 'Free', hi: 'मुफ्त' } },
-    { icon: FaHandshake, label: { mr: 'कामाचे वातावरण', en: 'Work Environment', hi: 'कार्य वातावरण' }, value: { mr: 'सहकारी', en: 'Supportive', hi: 'सहयोगी' } }
+    { icon: FaRupeeSign, label: { mr: 'प्रशिक्षणादरम्यान', en: 'Salary', hi: 'प्रशिक्षण के दौरान' }, value: 'From ₹20,000/month to ₹1,00,000+ /month' },
+    // { icon: FaRocket, label: { mr: 'प्रशिक्षणानंतर', en: 'After Training', hi: 'प्रशिक्षण के बाद' }, value: '₹50,000/month' },
+    // { icon: FaHome, label: { mr: 'निवास व प्रवास', en: 'Accommodation & Travel', hi: 'आवास और यात्रा' }, value: { mr: 'मोफत', en: 'Free', hi: 'मुफ्त' } },
+    // { icon: FaHandshake, label: { mr: 'कामाचे वातावरण', en: 'Work Environment', hi: 'कार्य वातावरण' }, value: { mr: 'सहकारी', en: 'Supportive', hi: 'सहयोगी' } }
   ];
 
   const eligibility = [
@@ -90,7 +87,7 @@ export default function JobsSection() {
   ];
 
   const handleApply = () => {
-    window.location.href = "mailto:hr@suyashhealthcare.com?subject=Application for " +
+    window.location.href = "mailto:info@suyashhealthcare.com?subject=Application for " +
       (selectedRole === 'survey' ? 'Health Survey Representative' : 'Business Development Executive');
   };
 
@@ -362,8 +359,8 @@ export default function JobsSection() {
               </div>
 
               <div className="mt-4 pt-4 border-t border-white/20 flex items-center justify-between text-xs text-white/80">
-                <span>{locale === 'mr' ? 'ईमेल:' : locale === 'hi' ? 'ईमेल:' : 'Email:'} hr@suyashhealthcare.com</span>
-                <span>{locale === 'mr' ? 'फोन:' : locale === 'hi' ? 'फोन:' : 'Phone:'} +91 98765 43210</span>
+                <span>{locale === 'mr' ? 'ईमेल:' : locale === 'hi' ? 'ईमेल:' : 'Email:'} info@suyashhealthcare.com</span>
+                <span>{locale === 'mr' ? 'फोन:' : locale === 'hi' ? 'फोन:' : 'Phone:'} +91 8291717196</span>
               </div>
             </div>
           </motion.div>

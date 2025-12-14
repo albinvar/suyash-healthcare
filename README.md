@@ -135,4 +135,4 @@ Latest versions of Chrome, Firefox, Safari, Edge, and mobile browsers.
 
 ## License
 
-© 2024 Suyash Health Care Centre. All rights reserved.
+© 2025 Suyash Health Care Centre. All rights reserved.

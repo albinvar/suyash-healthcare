@@ -1,8 +1,21 @@
 'use client';
 
 import Link from 'next/link';
-import { FaHeartbeat, FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
-import { FiMail, FiPhone, FiMapPin, FiClock, FiHome } from 'react-icons/fi';
+import {
+  FaHeartbeat,
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+} from 'react-icons/fa';
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiClock,
+  FiHome,
+  FiExternalLink,
+} from 'react-icons/fi';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { motion } from 'framer-motion';
 
@@ -58,7 +71,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {/* About Us Column */}
+          {/* About */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <FaHeartbeat className="w-8 h-8 text-primary-400" />
@@ -69,22 +82,20 @@ export default function Footer() {
             <p className="text-neutral-300 text-sm leading-relaxed">
               {t.footer.about.description}
             </p>
-            <div className="pt-2">
-              <Link
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('#about');
-                }}
-                className="text-primary-400 hover:text-primary-300 text-sm font-medium inline-flex items-center group"
-              >
-                {t.common.learnMore}
-                <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </div>
+            <Link
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('#about');
+              }}
+              className="text-primary-400 hover:text-primary-300 text-sm font-medium inline-flex items-center group"
+            >
+              {t.common.learnMore}
+              <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
           </div>
 
-          {/* Quick Links Column */}
+          {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-white">
               {t.footer.quickLinks.title}
@@ -94,7 +105,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className="text-neutral-300 hover:text-primary-400 text-sm transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-neutral-300 hover:text-primary-400 text-sm transition-all hover:translate-x-1"
                   >
                     {link.label}
                   </button>
@@ -103,20 +114,31 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info Column */}
+          {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-white">
               {t.footer.contactInfo.title}
             </h3>
             <ul className="space-y-3">
+              {/* Address with Maps Arrow */}
               <li className="flex items-start space-x-3 text-sm">
                 <FiMapPin className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
-                <span className="text-neutral-300">
+                <span className="text-neutral-300 flex items-start gap-2">
                   {t.footer.contactInfo.address}
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Suyash+Health+Care+Centre+Pune"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-400 hover:text-primary-300 transition-colors mt-0.5"
+                    aria-label="Open in Google Maps"
+                  >
+                    <FiExternalLink className="w-4 h-4" />
+                  </a>
                 </span>
               </li>
+
               <li className="flex items-center space-x-3 text-sm">
-                <FiPhone className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <FiPhone className="w-5 h-5 text-primary-400" />
                 <a
                   href={`tel:${t.footer.contactInfo.phone}`}
                   className="text-neutral-300 hover:text-primary-400 transition-colors"
@@ -124,8 +146,9 @@ export default function Footer() {
                   {t.footer.contactInfo.phone}
                 </a>
               </li>
+
               <li className="flex items-center space-x-3 text-sm">
-                <FiMail className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <FiMail className="w-5 h-5 text-primary-400" />
                 <a
                   href={`mailto:${t.footer.contactInfo.email}`}
                   className="text-neutral-300 hover:text-primary-400 transition-colors break-all"
@@ -136,40 +159,37 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Branches Info Column */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-white">
-              {t.footer.branchesInfo.title}
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3 text-sm">
-              <FiHome className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+          {/* Branches & Social */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-bold text-white">
+                {t.footer.branchesInfo.title}
+              </h3>
+              <div className="flex items-start gap-3 text-sm mt-2">
+                <FiHome className="w-5 h-5 text-primary-400 mt-0.5" />
                 <span className="text-neutral-300">
-                  {t.footer.branchesInfo.sentence.replace('{total}', t.footer.branchesInfo.total.toString())}
+                  {t.footer.branchesInfo.sentence.replace(
+                    '{total}',
+                    t.footer.branchesInfo.total.toString()
+                  )}
                 </span>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </div>
 
-
-          {/* Social Media & Business Hours Column */}
-          <div className="space-y-4">
-            {/* Social Media */}
-            <div className="space-y-4">
+            <div>
               <h3 className="text-lg font-bold text-white">
                 {t.footer.socialMedia.title}
               </h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mt-3">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-neutral-400 ${social.color} transition-colors duration-200`}
+                    className={`text-neutral-400 ${social.color}`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    aria-label={social.name}
                   >
                     <social.icon className="w-6 h-6" />
                   </motion.a>
@@ -177,38 +197,37 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Business Hours */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
+            <div>
+              <div className="flex items-center gap-2">
                 <FiClock className="w-5 h-5 text-primary-400" />
                 <h3 className="text-lg font-bold text-white">
                   {t.footer.businessHours.title}
                 </h3>
               </div>
-              <ul className="space-y-1 text-sm text-neutral-300">
+              <ul className="text-sm text-neutral-300 mt-2 space-y-1">
                 <li>{t.footer.businessHours.weekdays}</li>
                 <li>{t.footer.businessHours.saturday}</li>
-                <li className="text-neutral-400">{t.footer.businessHours.sunday}</li>
+                <li className="text-neutral-400">
+                  {t.footer.businessHours.sunday}
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-neutral-700">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-neutral-400 text-center md:text-left">
-              {t.footer.copyright}
-            </p>
-            <div className="flex items-center space-x-4 text-sm text-neutral-400">
-              <Link href="/privacy" className="hover:text-primary-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <span className="text-neutral-600">|</span>
-              <Link href="/terms" className="hover:text-primary-400 transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+        <div className="mt-12 pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-neutral-400 text-center md:text-left">
+            {t.footer.copyright}
+          </p>
+          <div className="flex items-center gap-4 text-sm text-neutral-400">
+            <Link href="/privacy" className="hover:text-primary-400">
+              Privacy Policy
+            </Link>
+            <span className="text-neutral-600">|</span>
+            <Link href="/terms" className="hover:text-primary-400">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
