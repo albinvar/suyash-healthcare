@@ -7,7 +7,6 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FaCheckCircle } from 'react-icons/fa';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
-/* -------------------- SLIDES DATA -------------------- */
 
 const highlightSlides = [
   { image: '/assets/images/camp/camp1.jpeg' },
@@ -22,7 +21,6 @@ const highlightSlides = [
   { image: '/assets/images/camp/camp10.jpeg' },
 ];
 
-/* -------------------- COMPONENT -------------------- */
 
 export default function KeyHighlightsSection() {
   const { locale } = useLanguage();
@@ -74,14 +72,14 @@ export default function KeyHighlightsSection() {
   return (
     <section id="key" className="w-full py-28 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-500 text-center mb-14">
+        <h2 className="text-2xl md:text-4xl font-bold text-blue-500 text-center mb-14">
           Key Highlights
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           {/* LEFT CONTENT */}
           <div className="h-full bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-8 text-white flex flex-col">
-            <h3 className="text-2xl font-bold mb-8 text-white">
+            <h3 className="md:text-2xl text-lg font-bold mb-8 text-white">
               {locale === 'mr'
                 ? 'महत्वपूर्ण ठळक मुद्दे (20 लाख+ लसीकरण)'
                 : locale === 'hi'
@@ -93,7 +91,7 @@ export default function KeyHighlightsSection() {
               {highlightsText.map((item, i) => (
                <li key={i} className="flex items-start gap-3">
                <FaCheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
-               <span className="text-xl leading-relaxed">
+               <span className="md:text-xl text-lg leading-relaxed">
                  {locale === 'mr'
                    ? item.mr
                    : locale === 'hi'

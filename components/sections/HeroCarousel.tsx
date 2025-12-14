@@ -87,12 +87,12 @@ export default function HeroCarousel() {
 
   const nextSlide = useCallback(() => {
     setDirection(1);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((p) => (p + 1) % slides.length);
   }, []);
 
   const prevSlide = useCallback(() => {
     setDirection(-1);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((p) => (p - 1 + slides.length) % slides.length);
   }, []);
 
   useEffect(() => {
@@ -106,53 +106,59 @@ export default function HeroCarousel() {
   return (
     <section
       id="home"
-      className="relative w-full h-[68vh] sm:h-[78vh] lg:h-[92vh] overflow-hidden"
+      className=" w-full h-[90vh] overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* 🔹 BLURRED BACKGROUND */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/assets/images/hero/collage.png"
           alt="Hero background"
           fill
           priority
-          className="object-cover blur-sm scale-205"
+          className="object-cover blur-sm scale-110"
         />
         <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      <AnimatePresence initial={false} custom={direction} mode="wait">
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          custom={direction}
-          initial={{ x: direction > 0 ? 200 : -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: direction < 0 ? 200 : -200, opacity: 0 }}
+          initial={{ opacity: 0, x: direction > 0 ? 120 : -120 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: direction < 0 ? 120 : -120 }}
           transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
           <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 h-full items-end gap-10 pb-20">
-              {/* CONTENT */}
-              <div className="text-white">
-                <h1 className="md:text-4xl lg:text-6xl font-bold mb-6 text-white text-lg">
+            <div
+              className="
+                    grid grid-cols-1 md:grid-cols-2
+                    h-full
+                    items-start md:items-end
+                    gap-6 md:gap-10
+                    pt-36 md:pt-0
+                    pb-1 md:pb-20
+                    " >
+
+              <div className="text-white text-center md:text-left">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-white">
                   {slide.title[locale]}
                 </h1>
 
-                <p className="md:text-lg text-sm text-white/90 mb-8">
+                <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6">
                   {slide.subtitle[locale]}
                 </p>
 
                 {slide.stats && (
-                  <div className="md:grid grid-cols-3 gap-4 mb-8 hidden">
+                  <div className="hidden md:grid grid-cols-3 gap-4 mb-6">
                     {slide.stats.map((s, i) => (
                       <div
                         key={i}
                         className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4"
                       >
-                        <div className="md:text-2xl text-md font-bold">{s.value}</div>
-                        <div className="md:text-sm text-xs text-white/80">
+                        <div className="text-2xl font-bold">{s.value}</div>
+                        <div className="text-sm text-white/80">
                           {s.label[locale]}
                         </div>
                       </div>
@@ -160,27 +166,25 @@ export default function HeroCarousel() {
                   </div>
                 )}
 
-                <button className=" hidden md:inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold">
+                <button className="hidden md:inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold">
                   {slide.ctaText[locale]}
                   <FiArrowRight />
                 </button>
               </div>
 
-              {/* IMAGE (Bottom for slide 1, Center for slide 2) */}
-              <div
-                className="relative h-full flex items-end"
-              >
+              {/* IMAGE */}
+              <div className="relative h-full flex items-center md:items-end">
                 <div
                   className={`relative ${slide.id === 2
-                      ? 'w-[150%] aspect-square mx-auto'
-                      : 'w-[160%] aspect-[4/3] -mr-32 -mb-28'
+                    ? 'w-[100%] sm:w-[120%] md:w-[150%] aspect-square mx-auto'
+                    : 'w-[110%] sm:w-[130%] md:w-[160%] aspect-[4/3] md:-mr-32 md:-mb-28'
                     }`}
                 >
                   <Image
                     src={slide.image}
                     alt={slide.title[locale]}
                     fill
-                    className="object-contain scale-110"
+                    className="object-contain"
                   />
                 </div>
               </div>
@@ -190,17 +194,17 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* NAVIGATION */}
+      {/* Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md md:p-3 rounded-full text-white p-1"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 md:p-3 rounded-full text-white"
       >
         <FiChevronLeft />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md md:p-3 p-1 rounded-full text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 md:p-3 rounded-full text-white"
       >
         <FiChevronRight />
       </button>

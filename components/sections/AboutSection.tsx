@@ -43,7 +43,7 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
   }, [isInView, value]);
 
   return (
-    <div ref={ref} className="text-2xl font-bold text-primary-700">
+    <div ref={ref} className="md:text-2xl text-lg font-bold text-primary-700">
       {count.toLocaleString()}{suffix}
     </div>
   );
@@ -153,8 +153,8 @@ export default function AboutSection() {
             {/* Headline */}
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {locale === 'mr' ? 'युनुस शेख - एक प्रेरणादायी प्रवास' :
-               locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
-               'Suyash Health Care - An Inspiring Journey'}
+                locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
+                  'Suyash Health Care - An Inspiring Journey'}
             </h2>
 
             {/* Main Content */}
@@ -163,8 +163,8 @@ export default function AboutSection() {
                 {locale === 'mr' ?
                   'व्यवस्थापकीय संचालक (एमडी): यूनुस शेख हे सोलापूर जिल्ह्यातील एक प्रेरणादायी उद्योजक आहेत. 2002 पासून त्यांनी आरोग्यसेवा क्षेत्रात समाजकार्याची सुरुवात केली. त्यांनी आयुर्वेदिक उपायांपैकी "सुवर्णप्राशन" सारख्या आरोग्य उपक्रमांची सुरुवात केली आणि "सुयश हेल्थ केअर"च्या माध्यमातून ग्रामीण भागातील नागरिकांपर्यंत मोफत आरोग्यसेवा पोहोचवण्याचा सतत प्रयत्न केला.' :
                   locale === 'hi' ?
-                  'प्रबंध निदेशक (एमडी): यूनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
-                  'Managing Director(MD). Yunus Shaikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and many more health camps has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
+                    'प्रबंध निदेशक (एमडी): यूनुस शेख सोलापुर जिले के एक प्रेरणादायक उद्यमी हैं। 2002 से उन्होंने स्वास्थ्य सेवा क्षेत्र में सामाजिक कार्य शुरू किया। उन्होंने "सुवर्णप्राशन" जैसे आयुर्वेदिक स्वास्थ्य कार्यक्रम शुरू किए और "सुयश हेल्थ केयर" के माध्यम से ग्रामीण क्षेत्रों के नागरिकों तक मुफ्त स्वास्थ्य सेवा पहुंचाने का निरंतर प्रयास किया।' :
+                    'Managing Director(MD). Yunus Shaikh is an inspiring entrepreneur from Solapur district. Since 2002, he has been involved in social work in the healthcare sector. He initiated Ayurvedic health programs like "Suvarnaprashan" and many more health camps has continuously worked to provide free healthcare services to citizens in rural areas through "Suyash Health Care".'
                 }
               </p>
 
@@ -172,8 +172,8 @@ export default function AboutSection() {
                 {locale === 'mr' ?
                   'पुणे येथे येऊन त्यांनी पुणे ग्रामीण भागात अनेक आरोग्य शिबिरे यशस्वीपणे आयोजित केली असून, त्यांचे हे समाजोपयोगी कार्य आजही अखंडपणे सुरू आहे.' :
                   locale === 'hi' ?
-                  'पुणे आकर उन्होंने पुणे ग्रामीण क्षेत्र में कई स्वास्थ्य शिविर सफलतापूर्वक आयोजित किए हैं, और उनका यह सामाजिक कार्य आज भी निरंतर जारी है।' :
-                  'After coming to Pune, he has successfully organized numerous health camps in rural Maharashtra, and this social welfare work continues uninterrupted to this day.'
+                    'पुणे आकर उन्होंने पुणे ग्रामीण क्षेत्र में कई स्वास्थ्य शिविर सफलतापूर्वक आयोजित किए हैं, और उनका यह सामाजिक कार्य आज भी निरंतर जारी है।' :
+                    'After coming to Pune, he has successfully organized numerous health camps in rural Maharashtra, and this social welfare work continues uninterrupted to this day.'
                 }
               </p>
             </div>
@@ -217,8 +217,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Highlights Widget */}
-          
           </motion.div>
         </div>
       </div>
