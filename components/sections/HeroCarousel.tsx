@@ -23,7 +23,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: '/assets/images/gallery/owner.png',
+    image: '/assets/images/gallery/owner3.png',
     imagePosition: 'right',
     title: {
       mr: 'सुयश हेल्थ केयर - आरोग्यसेवेचे प्रणेते',
@@ -59,15 +59,19 @@ const slides: Slide[] = [
     stats: [
       {
         value: '1,00,00,000+',
-        label: { mr: 'लाभार्थी', en: 'Beneficiaries', hi: 'लाभार्थी' },
+        label: { mr: 'लाभार्थी', en: 'Beneficiaries till now', hi: 'लाभार्थी' },
       },
       {
         value: '100+',
-        label: { mr: 'शिबिरे', en: 'Camps', hi: 'शिविर' },
+        label: { mr: 'शिबिरे', en: 'Camps Till Now', hi: 'अब तक शिविर' },
       },
       {
         value: '70+',
-        label: { mr: 'गावे', en: 'Villages', hi: 'गांव' },
+        label: {
+          mr: 'आतापर्यंत कव्हर केलेली गावे',
+          en: 'Villages Covered Till Now',
+          hi: 'अब तक कवर किए गए गाँव'
+        }
       },
     ],
     ctaText: {
@@ -106,7 +110,7 @@ export default function HeroCarousel() {
   return (
     <section
       id="home"
-      className=" w-full h-[90vh] overflow-hidden"
+      className="relative w-full min-h-[85vh] h-[85vh] md:h-[90vh] overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -130,54 +134,62 @@ export default function HeroCarousel() {
           transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
-          <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              className="
-                    grid grid-cols-1 md:grid-cols-2
-                    h-full
-                    items-start md:items-end
-                    gap-6 md:gap-10
-                    pt-36 md:pt-0
-                    pb-1 md:pb-20
-                    " >
-
-              <div className="text-white text-center md:text-left">
-                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-white">
+          <div className=" h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 h-full items-start md:items-end gap-4 sm:gap-6 md:gap-10 pt-20 sm:pt-24 md:pt-0 pb-0 sm:pb-0 md:pb-20">
+              <div className="text-white text-center md:text-left order-1 md:order-1">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-1 md:mt-0 mt-10 text-white leading-tight">
                   {slide.title[locale]}
                 </h1>
 
-                <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
                   {slide.subtitle[locale]}
                 </p>
 
                 {slide.stats && (
-                  <div className="hidden md:grid grid-cols-3 gap-4 mb-6">
-                    {slide.stats.map((s, i) => (
-                      <div
-                        key={i}
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4"
-                      >
-                        <div className="text-2xl font-bold">{s.value}</div>
-                        <div className="text-sm text-white/80">
-                          {s.label[locale]}
+                  <>
+                    {/* Mobile Stats - Horizontal Scroll */}
+                    <div className=" flex md:hidden gap-3 mb-4 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
+                      {slide.stats.map((s, i) => (
+                        <div
+                          key={i}
+                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 min-w-[100px] flex-shrink-0"
+                        >
+                          <div className="text-xl font-bold">{s.value}</div>
+                          <div className="text-xs text-white/80 leading-tight">
+                            {s.label[locale]}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                    {/* Desktop Stats */}
+                    <div className="hidden md:grid grid-cols-3 gap-4 mb-6">
+                      {slide.stats.map((s, i) => (
+                        <div
+                          key={i}
+                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4"
+                        >
+                          <div className="text-2xl font-bold">{s.value}</div>
+                          <div className="text-sm text-white/80">
+                            {s.label[locale]}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
                 )}
 
-                <button className="hidden md:inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-full font-semibold">
+                <button className="hidden md:inline-flex items-center gap-2 sm:gap-3 bg-white text-primary-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base mx-auto md:mx-0 hover:bg-white/90 transition-colors">
                   {slide.ctaText[locale]}
-                  <FiArrowRight />
+                  <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
 
               {/* IMAGE */}
-              <div className="relative h-full flex items-center md:items-end">
+              <div className="order-2 md:order-2 flex items-end justify-center md:justify-end h-full">
                 <div
                   className={`relative ${slide.id === 2
-                    ? 'w-[100%] sm:w-[120%] md:w-[150%] aspect-square mx-auto'
-                    : 'w-[110%] sm:w-[130%] md:w-[160%] aspect-[4/3] md:-mr-32 md:-mb-28'
+                      ? 'h-[250px] sm:h-[350px] md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto'
+                      : 'h-[500px] sm:h-[700px] md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1000px] w-[100%] sm:w-[100%] md:w-[280%] lg:w-[320%] xl:w-[360%] 2xl:w-[400%] aspect-[4/3] md:aspect-auto md:scale-110 lg:scale-125 xl:scale-135 2xl:scale-150 md:-mr-40 lg:-mr-52 xl:-mr-64 2xl:-mr-72 md:-mb-36 lg:-mb-44 xl:-mb-52 2xl:-mb-60 mx-auto'
                     }`}
                 >
                   <Image
@@ -188,7 +200,6 @@ export default function HeroCarousel() {
                   />
                 </div>
               </div>
-
             </div>
           </div>
         </motion.div>
@@ -197,16 +208,18 @@ export default function HeroCarousel() {
       {/* Navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 md:p-3 rounded-full text-white"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 sm:p-2.5 md:p-3 rounded-full text-white hover:bg-white/30 transition-colors z-10"
+        aria-label="Previous slide"
       >
-        <FiChevronLeft />
+        <FiChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 md:p-3 rounded-full text-white"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-2 sm:p-2.5 md:p-3 rounded-full text-white hover:bg-white/30 transition-colors z-10"
+        aria-label="Next slide"
       >
-        <FiChevronRight />
+        <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
     </section>
   );

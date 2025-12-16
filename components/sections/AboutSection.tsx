@@ -84,12 +84,12 @@ export default function AboutSection() {
     },
     {
       icon: <FaHandHoldingHeart className="w-5 h-5" />,
-      value: 100,
+      value: 50000,
       suffix: '+',
       label: {
-        mr: 'आरोग्य शिबिरे',
-        en: 'Health Camps',
-        hi: 'स्वास्थ्य शिविर'
+        mr: 'आतापर्यंत आरोग्य शिबिरे',
+        en: 'Health Camps Till Now',
+        hi: 'अब तक स्वास्थ्य शिविर'
       }
     },
     {
@@ -97,10 +97,10 @@ export default function AboutSection() {
       value: 10000000,
       suffix: '+',
       label: {
-        mr: 'सेवकर्मचाऱ्यांची संख्या',
-        en: 'People Served',
-        hi: 'सेवाकर्मियों की संख्या'
-      }
+        mr: 'आतापर्यंत सेवा दिलेल्या लोकांची संख्या',
+        en: 'People Served Till Now',
+        hi: 'अब तक सेवा प्राप्त करने वाले लोगों की संख्या'
+      }      
     },
     {
       icon: <FaAward className="w-5 h-5" />,
@@ -117,9 +117,9 @@ export default function AboutSection() {
       value: 1000,
       suffix: '+',
       label: {
-        mr: 'डॉक्टरांना दिलेल्या नोकऱ्या',
-        en: 'Jobs given to doctors',
-        hi: 'डॉक्टरों को दी गई नौकरियाँ'
+        mr: 'आतापर्यंत डॉक्टरांना दिलेल्या नोकऱ्या',
+        en: 'Jobs given to doctors till now',
+        hi: 'अब तक डॉक्टरों को दी गई नौकरियाँ'
       }
     },
     {
@@ -127,9 +127,9 @@ export default function AboutSection() {
       value: 1000,
       suffix: '+',
       label: {
-        mr: 'नर्सांना प्रदान केलेल्या नोकऱ्या',
-        en: 'Jobs given to Nurses',
-        hi: 'नर्सों को प्रदान की गई नौकरियाँ'
+        mr: 'आतापर्यंत नर्सांना प्रदान केलेल्या नोकऱ्या',
+        en: 'Jobs given to Nurses till now',
+        hi: 'अब तक नर्सों को प्रदान की गई नौकरियाँ'
       }
     },
   ];
