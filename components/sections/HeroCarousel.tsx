@@ -151,9 +151,9 @@ export default function HeroCarousel() {
                       {slide.stats.map((s, i) => (
                         <div
                           key={i}
-                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-1 min-w-[100px] flex-shrink-0"
+                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 min-w-[100px] flex-shrink-0"
                         >
-                          <div className="text-sm font-bold">{s.value}</div>
+                          <div className="text-md font-bold">{s.value}</div>
                           <div className="text-xs text-white/80 leading-tight">
                             {s.label[locale]}
                           </div>
@@ -188,7 +188,7 @@ export default function HeroCarousel() {
                 <div
                   className={` ${slide.id === 2
                       ? 'relative h-[100px]  md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto  '
-                      : 'h-[400px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:scale-150 md:-mr-72 md:-mb-60  mx-auto'
+                      : 'h-[500px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:scale-150 md:-mr-72 md:-mb-60  mx-auto'
                     }`}
                 >
                   <Image
