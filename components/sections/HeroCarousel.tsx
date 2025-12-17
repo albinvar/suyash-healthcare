@@ -151,10 +151,10 @@ export default function HeroCarousel() {
                       {slide.stats.map((s, i) => (
                         <div
                           key={i}
-                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 min-w-[100px] flex-shrink-0"
+                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 min-w-[100px] flex-shrink-0 mr-3"
                         >
                           <div className="text-md font-bold">{s.value}</div>
-                          <div className="text-xs text-white/80 leading-tight">
+                          <div className="text-sm text-white/80 leading-tight">
                             {s.label[locale]}
                           </div>
                         </div>
