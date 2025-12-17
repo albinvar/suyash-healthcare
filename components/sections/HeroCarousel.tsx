@@ -136,8 +136,8 @@ export default function HeroCarousel() {
         >
           <div className=" h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 h-full items-start md:items-end gap-4 sm:gap-6 md:gap-10 pt-20 sm:pt-24 md:pt-0 pb-0 sm:pb-0 md:pb-20">
-              <div className="text-white text-center md:text-left order-1 md:order-1">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-1 md:mt-0 mt-10 text-white leading-tight">
+              <div className="text-white text-center md:text-left order-1 md:order-1 ">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-1 md:mt-0 mt-20 text-white leading-tight">
                   {slide.title[locale]}
                 </h1>
 
@@ -147,14 +147,13 @@ export default function HeroCarousel() {
 
                 {slide.stats && (
                   <>
-                    {/* Mobile Stats - Horizontal Scroll */}
-                    <div className=" flex md:hidden gap-3 mb-4 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
+                    <div className=" flex md:hidden gap-2 mb-4 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide ">
                       {slide.stats.map((s, i) => (
                         <div
                           key={i}
-                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 min-w-[100px] flex-shrink-0"
+                          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-1 min-w-[100px] flex-shrink-0"
                         >
-                          <div className="text-xl font-bold">{s.value}</div>
+                          <div className="text-sm font-bold">{s.value}</div>
                           <div className="text-xs text-white/80 leading-tight">
                             {s.label[locale]}
                           </div>
@@ -185,11 +184,11 @@ export default function HeroCarousel() {
               </div>
 
               {/* IMAGE */}
-              <div className="order-2 md:order-2 flex items-end justify-center md:justify-end h-full">
+              <div className="order-2 md:order-2 md:flex md:items-end md:justify-end h-full">
                 <div
-                  className={`relative ${slide.id === 2
-                      ? 'h-[250px] sm:h-[350px] md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto'
-                      : 'h-[500px] sm:h-[700px] md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1000px] w-[100%] sm:w-[100%] md:w-[280%] lg:w-[320%] xl:w-[360%] 2xl:w-[400%] aspect-[4/3] md:aspect-auto md:scale-110 lg:scale-125 xl:scale-135 2xl:scale-150 md:-mr-40 lg:-mr-52 xl:-mr-64 2xl:-mr-72 md:-mb-36 lg:-mb-44 xl:-mb-52 2xl:-mb-60 mx-auto'
+                  className={` ${slide.id === 2
+                      ? 'relative h-[100px]  md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto  '
+                      : 'h-[300px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:-mr-72 md:-mb-60  mx-auto'
                     }`}
                 >
                   <Image
