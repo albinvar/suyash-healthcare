@@ -188,7 +188,7 @@ export default function HeroCarousel() {
                 <div
                   className={` ${slide.id === 2
                       ? 'relative h-[100px]  md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto  '
-                      : 'h-[300px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:-mr-72 md:-mb-60  mx-auto'
+                      : 'h-[400px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:scale-150 md:-mr-72 md:-mb-60  mx-auto'
                     }`}
                 >
                   <Image
