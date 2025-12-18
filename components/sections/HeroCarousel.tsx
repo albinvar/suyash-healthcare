@@ -62,11 +62,11 @@ const slides: Slide[] = [
         label: { mr: 'लाभार्थी', en: 'Beneficiaries till now', hi: 'लाभार्थी' },
       },
       {
-        value: '100+',
+        value: '50000+',
         label: { mr: 'शिबिरे', en: 'Camps Till Now', hi: 'अब तक शिविर' },
       },
       {
-        value: '70+',
+        value: '10000+',
         label: {
           mr: 'आतापर्यंत कव्हर केलेली गावे',
           en: 'Villages Covered Till Now',

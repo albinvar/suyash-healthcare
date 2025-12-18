@@ -100,7 +100,7 @@ export default function AboutSection() {
         mr: 'आतापर्यंत सेवा दिलेल्या लोकांची संख्या',
         en: 'People Served Till Now',
         hi: 'अब तक सेवा प्राप्त करने वाले लोगों की संख्या'
-      }      
+      }
     },
     {
       icon: <FaAward className="w-5 h-5" />,
@@ -152,8 +152,8 @@ export default function AboutSection() {
 
             {/* Headline */}
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-              {locale === 'mr' ? 'युनुस शेख - एक प्रेरणादायी प्रवास' :
-                locale === 'hi' ? 'युनुस शेख - एक प्रेरणादायक यात्रा' :
+              {locale === 'mr' ? 'सुयश हेल्थ केयर - एक प्रेरणादायी प्रवास' :
+                locale === 'hi' ? 'सुयश हेल्थ केयर - एक प्रेरणादायक यात्रा' :
                   'Suyash Health Care - An Inspiring Journey'}
             </h2>
 
