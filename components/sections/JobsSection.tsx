@@ -225,6 +225,8 @@ export default function JobsSection() {
                   <p className="font-semibold text-sm text-neutral-900">
                     {typeof benefit.value === 'object' ? benefit.value[locale] : benefit.value}
                   </p>
+                  <span className="text-xs text-neutral-600">Terms and Conditions apply</span>
+
                 </motion.div>
               ))}
             </div>

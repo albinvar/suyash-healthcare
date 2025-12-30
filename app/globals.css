@@ -174,16 +174,6 @@ button {
   .shadow-glow-green {
     box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
   }
-
-  /* Hide scrollbar */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 /* Component layer */

@@ -20,6 +20,7 @@ interface Slide {
   ctaAction: string;
 }
 
+
 const slides: Slide[] = [
   {
     id: 1,
@@ -47,9 +48,9 @@ const slides: Slide[] = [
     image: '/logo2.png',
     imagePosition: 'left',
     title: {
-      mr: 'मोफत आरोग्य तपासणी शिबिरे',
-      en: 'Free Health Check-up Camps',
-      hi: 'मुफ्त स्वास्थ्य जांच शिविर',
+      mr: 'आरोग्य तपासणी शिबिरे',
+      en: 'Health Check-up Camps',
+      hi: 'स्वास्थ्य जांच शिविर',
     },
     subtitle: {
       mr: 'ग्रामीण भागातील हजारो नागरिकांपर्यंत आरोग्यसेवा पोहोचवत आहोत',
@@ -115,15 +116,10 @@ export default function HeroCarousel() {
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="absolute inset-0 -z-20">
-        <Image
-          src="/assets/images/hero/collage.png"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover blur-sm scale-110"
-        />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500 to-blue-500" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_60%)]" />
       </div>
+
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -187,8 +183,8 @@ export default function HeroCarousel() {
               <div className="order-2 md:order-2 md:flex md:items-end md:justify-end h-full">
                 <div
                   className={` ${slide.id === 2
-                      ? 'relative h-[100px]  md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto scale-150 ml-0 md:ml-20'
-                      : 'h-[500px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:scale-150 md:-mr-72 md:-mb-60  mx-auto'
+                    ? 'relative h-[100px]  md:h-[600px] w-full sm:w-[90%] md:w-[150%] max-w-[400px] sm:max-w-none mx-auto scale-150 ml-0 md:ml-20'
+                    : 'h-[500px] md:h-[1000px] w-[130%] md:w-[320%] scale-150 md:scale-150 md:-mr-72 md:-mb-60  mx-auto'
                     }`}
                 >
                   <Image

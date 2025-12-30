@@ -185,7 +185,7 @@ export default function MachineShowcase() {
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">100%</div>
+                  <div className="text-3xl font-bold">95%</div>
                   <div className="text-xs mt-1">
                     {locale === 'mr' ? 'अचूक' : locale === 'hi' ? 'सटीक' : 'Accurate'}
                   </div>
