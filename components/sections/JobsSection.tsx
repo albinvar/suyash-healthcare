@@ -92,7 +92,7 @@ export default function JobsSection() {
   };
 
   const handleCall = () => {
-    window.location.href = "tel:+919876543210";
+    window.location.href = "tel:+918291717196";
   };
 
   return (
