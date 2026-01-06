@@ -349,7 +349,7 @@ export default function ProductsSection() {
              'For more information'}
           </p>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/918291717196"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium transition-colors"
@@ -557,7 +557,7 @@ export default function ProductsSection() {
                             {locale === 'mr' ? 'ऑर्डर पाठवा' : locale === 'hi' ? 'ऑर्डर भेजें' : 'Submit Order'}
                           </button>
                           <a
-                            href="https://wa.me/919876543210"
+                            href="https://wa.me/918291717196"
                             className="flex-1 border border-green-600 text-green-600 hover:bg-green-50 py-2.5 rounded-md font-medium text-sm transition-colors text-center"
                           >
                             WhatsApp
